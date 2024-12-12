@@ -9,8 +9,8 @@
 #   end
 
 
-User.create(name: "John", email: "john@mail.com", password: "johnjohn")
-User.create(name: "Alice", email: "alice@mail.com", password: "alicealice")
-User.create(name: "Bruce", email: "bruce@mail.com", password: "brucebruce")
-User.create(name: "Suzanne", email: "suzanne@mail.com", password: "suzannesuzanne")
-User.create(name: "Vincente", email: "vincente@mail.com", password: "vincentevincente")
+User.find_by(name: "John") || User.create(name: "John", email: "john@mail.com", password: "johnjohn")
+User.find_by(name: "Alice") || User.create(name: "Alice", email: "alice@mail.com", password: "alicealice")
+User.find_by(name: "Bruce") || User.create(name: "Bruce", email: "bruce@mail.com", password: "brucebruce")
+User.find_by(name: "Suzanne") || User.create(name: "Suzanne", email: "suzanne@mail.com", password: "suzannesuzanne")
+User.find_by(name: "Vincente") || User.create(name: "Vincente", email: "vincente@mail.com", password: "vincentevincente")
