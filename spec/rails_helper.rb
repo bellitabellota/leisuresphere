@@ -69,6 +69,9 @@ RSpec.configure do |config|
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
 
+  # Including Warden Test Helper:
+  config.include Warden::Test::Helpers
+
   # Uncomment the following lines if you want to see what Capybara is doing
   # config.before(:each, type: :system) do
   #   driven_by :selenium_chrome
@@ -80,7 +83,7 @@ RSpec.configure do |config|
   #     alias old_execute execute
 
   #     def execute(*args)
-  #       sleep(5)
+  #       sleep(0.5)
   #       old_execute(*args)
   #     end
   #   end
