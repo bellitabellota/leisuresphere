@@ -1,5 +1,6 @@
 
 <p>Below you can see all the people you are following and manage your connections.</p>
-<% @followees.each do |followee| %>
-  <div><%= followee.name %></div>
+<% @follows.each do |follow| %>
+  <div><%= follow.followee.name %></div>
+  <%= button_to "Unfollow", follow_path(follow), method: :delete, data: {turbo_confirm: "Are you sure?"} %>
 <% end %>

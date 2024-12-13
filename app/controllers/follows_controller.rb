@@ -1,6 +1,6 @@
 class FollowsController < ApplicationController
   def index
-    @followees = current_user.followees
+    @follows = Follow.where(follower_id: current_user.id)
   end
 
   def create
@@ -13,5 +13,11 @@ class FollowsController < ApplicationController
       flash.now[:error] = "Your Follow Request coud not be processed."
       render :index, status: :unprocessable_entity
     end
+  end
+
+  def destroy
+    @follow = Follow.find(params[:id])
+    @follow.destroy
+    redirect_to follows_path, status: :see_other
   end
 end
