@@ -32,6 +32,7 @@
         <%= link_to "Sign out", destroy_user_session_path, data: { turbo_method: :delete } %>
         <%= link_to "Home", root_path %>
         <%= link_to "Follow", users_path %>
+        <%= link_to "Following", follows_path %>
       <% end %>
     </header>
     <%= yield %>
