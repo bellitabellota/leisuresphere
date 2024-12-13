@@ -1,0 +1,13 @@
+<h1>Follow</h1>
+<p>Follow other users to see their latest posts in your Feed.</p>
+
+<div class="users">
+  <% @users.each do |user| %>
+    <% unless @followees.include?(user) %>
+        <div class="user">
+        <%= user.name %>
+        <%= button_to "Follow", follows_path(followee_id: user.id, follower_id: current_user.id), method: :post %>
+        </div>
+        <% end %>
+  <% end %>
+</div>
