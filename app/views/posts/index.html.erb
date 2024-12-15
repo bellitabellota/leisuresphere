@@ -1,2 +1,13 @@
 <h1>LeisureSphere</h1>
 <p>The social media platform to share all the little things you are passionate about!</p>
+
+<div class="posts">
+
+  <% @posts.each do |post| %>
+    <div class="post">
+      <h3><%= post.author.name %></h3>
+      <p class="post-date"><%= post.created_at.strftime("%d %B %Y") %></p>
+      <p class="post-body"><%= post.body %></p>
+    </div>
+  <% end %>
+</div>
