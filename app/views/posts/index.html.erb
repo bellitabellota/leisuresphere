@@ -16,6 +16,12 @@
       <% end %>
       
       <p class="post-body"><%= post.body %></p>
+      <p># Likes:<%= post.likers.count %></p>
+      <% if post.likers.include?(current_user) %>
+        <p>Put Remove like Link</p>
+      <% else %>
+        <%= link_to "Like", likes_path(liked_post_id: post.id, liker_id: current_user.id), data: { "turbo-method": :post } %>
+      <% end %>
     </div>
   <% end %>
 </div>
