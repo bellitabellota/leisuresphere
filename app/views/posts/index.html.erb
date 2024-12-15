@@ -10,6 +10,7 @@
       <p class="post-date"><%= post.created_at.strftime("%d %B %Y") %></p>
       <% if post.author == current_user %>
         <div class="author-options">
+          <%= link_to "Edit post", edit_post_path(post) %>
           <%= link_to "Delete post", post_path(post), data: { "turbo-method": :delete } %>
         </div>
       <% end %>
