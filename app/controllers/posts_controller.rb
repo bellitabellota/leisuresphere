@@ -11,12 +11,16 @@ class PostsController < ApplicationController
     @post = current_user.posts.build(post_params)
 
     if @post.save
-      # flash message?
       redirect_to root_path
     else
-      # flash_message
       render :new, status: :unprocessable_entity
     end
+  end
+
+  def destroy
+    @post = Post.find(params[:id])
+    @post.destroy
+    redirect_to root_path, status: :see_other
   end
 
   private

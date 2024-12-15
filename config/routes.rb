@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: { registrations: "users/registrations" }
   root "posts#index"
-  resources :posts, only: [ :index, :new, :create ]
+  resources :posts, only: [ :index, :new, :create, :destroy ]
   resources :follows, only: [ :index, :create, :destroy ]
   resources :users, only: [ :index ]
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
