@@ -10,6 +10,8 @@ class User < ApplicationRecord
   has_many :follows, foreign_key: :follower_id
   has_many :followees, through: :follows, source: :followee
 
+  has_many :posts, inverse_of: "author", dependent: :destroy
+
   validates :name, presence: true, uniqueness: true
   validates :email, presence: true, uniqueness: true
 end
