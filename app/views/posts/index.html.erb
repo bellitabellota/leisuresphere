@@ -1,8 +1,9 @@
 <h1>LeisureSphere</h1>
 <p>The social media platform to share all the little things you are passionate about!</p>
 
-<div class="posts">
+<%= link_to "New post", new_post_path %>
 
+<div class="posts">
   <% @posts.each do |post| %>
     <div class="post">
       <h3><%= post.author.name %></h3>
