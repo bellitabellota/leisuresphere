@@ -10,8 +10,8 @@ class FollowsController < ApplicationController
       flash[:success] = "Great, your are now following #{User.find(params[:followee_id]).name}!"
       redirect_to users_path
     else
-      flash.now[:error] = "Your Follow Request coud not be processed."
-      render :index, status: :unprocessable_entity
+      flash[:error] = "Your Follow Request could not be processed."
+      redirect_to root_path
     end
   end
 
