@@ -15,6 +15,8 @@ class User < ApplicationRecord
   has_many :likes, foreign_key: :liker_id, dependent: :destroy
   has_many :liked_posts, through: :likes
 
+  has_many :comments, inverse_of: "commenter", dependent: :destroy
+
   validates :name, presence: true, uniqueness: true
   validates :email, presence: true, uniqueness: true
 end
