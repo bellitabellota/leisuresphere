@@ -22,6 +22,13 @@
       <% else %>
         <%= link_to "Like", likes_path(liked_post_id: post.id, liker_id: current_user.id), data: { "turbo-method": :post } %>
       <% end %>
+
+      <%= link_to "Add Comment", new_post_comment_path(post_id: post.id) %>
+      <% if post.comments %>
+        <% post.comments.each do |comment| %>
+          <p><%= comment.body %></p>
+        <% end %>
+      <% end %>
     </div>
   <% end %>
 </div>
