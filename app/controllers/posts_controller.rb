@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   def index
-    @posts = Post.includes(:author, :likers, :comments).all
+    @all_posts = Post.includes(:author, :likers, :comments).all
+    @posts = Post.where(author_id: current_user.id).or(Post.where(author_id: current_user.followees.pluck(:id))).order(created_at: :desc)
   end
 
   def new
