@@ -17,6 +17,8 @@ class User < ApplicationRecord
 
   has_many :comments, inverse_of: "commenter", dependent: :destroy
 
+  has_one :profile, dependent: :destroy
+
   validates :name, presence: true, uniqueness: true
   validates :email, presence: true, uniqueness: true
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_12_16_122855) do
+ActiveRecord::Schema[7.2].define(version: 2024_12_19_164355) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -50,6 +50,17 @@ ActiveRecord::Schema[7.2].define(version: 2024_12_16_122855) do
     t.index ["author_id"], name: "index_posts_on_author_id"
   end
 
+  create_table "profiles", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.date "birthday"
+    t.string "location"
+    t.text "interests"
+    t.string "avatar_url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_profiles_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "name", null: false
     t.string "email", default: "", null: false
@@ -71,4 +82,5 @@ ActiveRecord::Schema[7.2].define(version: 2024_12_16_122855) do
   add_foreign_key "likes", "posts", column: "liked_post_id"
   add_foreign_key "likes", "users", column: "liker_id"
   add_foreign_key "posts", "users", column: "author_id"
+  add_foreign_key "profiles", "users"
 end
