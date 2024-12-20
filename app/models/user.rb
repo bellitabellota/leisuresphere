@@ -1,4 +1,9 @@
+require "digest"
+require "uri"
+
 class User < ApplicationRecord
+  after_create :create_profile
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -21,4 +26,20 @@ class User < ApplicationRecord
 
   validates :name, presence: true, uniqueness: true
   validates :email, presence: true, uniqueness: true
+
+  private
+
+  def create_profile
+    @profile = self.build_profile(avatar_url: get_avatar_url)
+    @profile.save
+  end
+
+  def get_avatar_url
+    email_address = self.email.downcase
+    hash = Digest::SHA256.hexdigest(email_address)
+    size= 200
+
+    params = URI.encode_www_form("s" => size)
+    "https://www.gravatar.com/avatar/#{hash}?#{params}"
+  end
 end
