@@ -1,9 +1,9 @@
 FactoryBot.define do
   factory :profile do
-    user { nil }
+    association :user, factory: :user
     birthday { "2024-12-19" }
-    location { "MyString" }
-    interests { "MyText" }
-    avatar_url { "MyString" }
+    location { "MyLocation" }
+    interests { "MyInterests" }
+    avatar_url { "MyAvatar" }
   end
 end
