@@ -1,0 +1,6 @@
+<h1>Profile Information</h1>
+<img src="<%= @profile.avatar_url %>" alt="profile-picture">
+<p>Username: <%= @profile.user.name %></p>
+<p>Birthday: <%= @profile.birthday || "—" %></p>
+<p>Place of Residence: <%= @profile.location || "—" %></p>
+<p>Interests: <%= @profile.interests || "—" %></p>

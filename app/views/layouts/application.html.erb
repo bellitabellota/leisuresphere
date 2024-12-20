@@ -33,6 +33,7 @@
         <%= link_to "Home", root_path %>
         <%= link_to "Follow", users_path %>
         <%= link_to "Following", follows_path %>
+        <%= link_to "My Profile", profile_path(current_user.profile.id) %>
       <% end %>
     </header>
     <%= yield %>
