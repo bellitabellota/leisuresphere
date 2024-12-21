@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.describe "require authentication to visit site", type: :system do
+RSpec.describe "Request authentication to visit site", type: :system do
   context "when unauthenticated users visit homepage" do
     it "they are redirected to log in page" do
       visit root_path
