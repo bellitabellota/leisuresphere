@@ -73,19 +73,19 @@ RSpec.configure do |config|
   config.include Warden::Test::Helpers
 
   # Uncomment the following lines if you want to see what Capybara is doing
-  # config.before(:each, type: :system) do
-  #   driven_by :selenium_chrome
-  # end
+  config.before(:each, type: :system) do
+    driven_by :selenium_chrome
+  end
 
-  # require "selenium-webdriver"
-  # module ::Selenium::WebDriver::Remote
-  #   class Bridge
-  #     alias old_execute execute
+  require "selenium-webdriver"
+  module ::Selenium::WebDriver::Remote
+    class Bridge
+      alias old_execute execute
 
-  #     def execute(*args)
-  #       sleep(0.5)
-  #       old_execute(*args)
-  #     end
-  #   end
-  # end
+      def execute(*args)
+        sleep(0.5)
+        old_execute(*args)
+      end
+    end
+  end
 end
