@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root "posts#index"
 
   resources :follows, only: [ :index, :create, :destroy ]
-  resources :users, only: [ :index ]
+  resources :users, only: [ :index, :destroy ]
   resources :likes, only: [ :create, :destroy ]
   resources :profiles, only: [ :show, :edit, :update ]
 
