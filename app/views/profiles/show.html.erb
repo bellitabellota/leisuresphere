@@ -4,3 +4,7 @@
 <p>Birthday: <%= @profile.birthday || "—" %></p>
 <p>Place of Residence: <%= @profile.location || "—" %></p>
 <p>Interests: <%= @profile.interests || "—" %></p>
+
+<% if current_user == @profile.user %>
+    <%= link_to "Edit Profile", edit_profile_path(@profile) %>
+<% end %>

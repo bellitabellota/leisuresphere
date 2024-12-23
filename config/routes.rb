@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :follows, only: [ :index, :create, :destroy ]
   resources :users, only: [ :index ]
   resources :likes, only: [ :create, :destroy ]
-  resources :profiles, only: [ :show ]
+  resources :profiles, only: [ :show, :edit, :update ]
 
   resources :posts, except: [ :show ] do
     resources :comments, only: [ :new, :create, :edit, :update, :destroy ]

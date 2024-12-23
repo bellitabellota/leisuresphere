@@ -1,0 +1,17 @@
+<h1>Edit Profile</h1>
+
+<%= form_with model:@profile do |form| %>
+    <%= form.label :birthday, "Birthday:" %>
+    <%= form.date_field :birthday %>
+
+    <%= form.label :location, "Place of Residence:" %>
+    <%= form.text_field :location%>
+
+    <%= form.label :interests, "Interests:" %>
+    <%= form.text_area :interests %>
+
+    <%= form.label :avatar_url, "Image URL:" %>
+    <%= form.text_field :avatar_url %>
+
+    <%= form.submit %>
+<% end %>
