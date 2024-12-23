@@ -7,7 +7,8 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
+         :recoverable, :rememberable, :validatable,
+         :omniauthable, omniauth_providers: [ :google_oauth2 ]
 
   has_many :follower_follows, foreign_key: :followee_id, class_name: "Follow", dependent: :destroy
   has_many :followers, through: :follower_follows, source: :follower
@@ -27,10 +28,20 @@ class User < ApplicationRecord
   validates :name, presence: true, uniqueness: true
   validates :email, presence: true, uniqueness: true
 
+  def self.from_omniauth(auth)
+    where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
+      user.email = auth.info.email
+      user.password = Devise.friendly_token[0, 20]
+      user.name = auth.info.name
+      user.instance_variable_set(:@avatar_url, auth.info.image) ####
+    end
+  end
+
   private
 
   def create_profile
-    @profile = self.build_profile(avatar_url: get_avatar_url)
+    avatar_url = @avatar_url || get_avatar_url
+    @profile = self.build_profile(avatar_url: avatar_url)
     @profile.save
   end
 
