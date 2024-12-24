@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   def index
     @current_user_and_followee_ids = current_user.followees.pluck(:id) << current_user.id
-    @posts = Post.includes(:author, :likers, :comments).where(author_id: @current_user_and_followee_ids).order(created_at: :desc)
+    @posts = Post.includes({ author: :profile }, :likers, { comments: { commenter: :profile } }).where(author_id: @current_user_and_followee_ids).order(created_at: :desc)
   end
 
   def new

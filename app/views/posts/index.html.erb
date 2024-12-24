@@ -7,7 +7,7 @@
   <% if @posts.any? %>
     <% @posts.each do |post| %>
       <div class="post">
-        <h3><%= post.author.name %></h3>
+        <h3><%= link_to "#{post.author.name}", profile_path(post.author.profile.id) %></h3>
         <p class="post-date"><%= post.created_at.strftime("%d %B %Y") %></p>
         <% if post.author == current_user %>
           <div class="author-options">
@@ -27,7 +27,7 @@
         <%= link_to "Add Comment", new_post_comment_path(post_id: post.id) %>
         <% if post.comments %>
           <% post.comments.each do |comment| %>
-            <p><%= comment.commenter.name %>: <%= comment.body %></p>
+            <p><%= link_to "#{comment.commenter.name}", profile_path(comment.commenter.profile.id) %>: <%= comment.body %></p>
             <% if comment.commenter == current_user %>
             <%= link_to "Edit Comment", edit_post_comment_path(post, comment)%>
             <%= link_to "Delete Comment", post_comment_path(post, comment), data: { "turbo-method": :delete } %>

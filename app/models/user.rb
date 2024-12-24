@@ -33,7 +33,7 @@ class User < ApplicationRecord
       user.email = auth.info.email
       user.password = Devise.friendly_token[0, 20]
       user.name = auth.info.name
-      user.instance_variable_set(:@avatar_url, auth.info.image) ####
+      user.instance_variable_set(:@avatar_url, auth.info.image)
     end
   end
 
