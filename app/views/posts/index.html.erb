@@ -17,7 +17,7 @@
         <% end %>
         
         <p class="post-body"><%= post.body %></p>
-        <p><%= post.likers.count %> Likes</p>
+        <p><%= post.likers.size %> Likes</p>
         <% if post.likers.include?(current_user) %>
           <%= link_to "Remove Like", like_path(post.likes.find_by(liker_id: current_user.id)), data: { "turbo-method": :delete }%>
         <% else %>
