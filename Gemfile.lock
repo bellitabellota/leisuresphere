@@ -109,6 +109,7 @@ GEM
       responders
       warden (~> 1.2.3)
     diff-lcs (1.5.1)
+    docile (1.4.1)
     dockerfile-rails (1.6.24)
       rails (>= 3.0.0)
     drb (2.2.1)
@@ -365,6 +366,12 @@ GEM
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
     shellany (0.0.1)
+    simplecov (0.22.0)
+      docile (~> 1.1)
+      simplecov-html (~> 0.11)
+      simplecov_json_formatter (~> 0.1)
+    simplecov-html (0.13.1)
+    simplecov_json_formatter (0.1.4)
     snaky_hash (2.0.1)
       hashie
       version_gem (~> 1.1, >= 1.1.1)
@@ -439,6 +446,7 @@ DEPENDENCIES
   responders
   rspec-rails
   rubocop-rails-omakase
+  simplecov
   sprockets-rails
   stimulus-rails
   turbo-rails
