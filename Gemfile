@@ -53,6 +53,8 @@ group :development do
   gem "guard-rspec", require: false
 end
 
+gem "letter_opener", group: :development
+
 group :development, :test do
   gem "rspec-rails"
   gem "factory_bot_rails"
