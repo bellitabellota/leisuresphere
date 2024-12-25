@@ -18,10 +18,6 @@
   </head>
 
   <body>
-    <!--Below the code will display the devise messages -->
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-
     <!--Below the code will display the flash messages-->
     <% flash.each do |name, message | %>
       <div class="<%= name %>"><%= message %></div>
