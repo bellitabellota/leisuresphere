@@ -1,6 +1,7 @@
 class ProfilesController < ApplicationController
   def show
     @profile = Profile.includes(:user).find(params[:id])
+    @posts = @profile.user.posts.includes(:likers, { comments: { commenter: :profile } }).order(created_at: :desc)
   end
 
   def edit
