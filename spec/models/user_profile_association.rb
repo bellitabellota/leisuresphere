@@ -23,6 +23,7 @@ RSpec.describe "User-Profile association", type: :model do
   context "deleting a user" do
     it "deletes his/her authored profile as well" do
       user_for_deletion = FactoryBot.create(:user)
+      expect(Profile.where(user_id: user_for_deletion.id)).not_to be_empty
       user_for_deletion.destroy
 
       expect(Profile.where(user_id: user_for_deletion.id)).to be_empty
