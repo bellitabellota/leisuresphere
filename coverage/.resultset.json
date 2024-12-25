@@ -418,6 +418,25 @@
           null
         ]
       },
+      "/home/bella--1/Desktop/Rails/leisuresphere/spec/system/users/delete_user_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
       "/home/bella--1/Desktop/Rails/leisuresphere/app/models/post.rb": {
         "lines": [
           1,
@@ -643,10 +662,10 @@
           null,
           null,
           1,
-          0,
+          1,
           null,
-          0,
-          0,
+          1,
+          1,
           null,
           null
         ]
@@ -699,8 +718,37 @@
           null,
           null
         ]
+      },
+      "/home/bella--1/Desktop/Rails/leisuresphere/app/controllers/profiles_controller.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          0,
+          null,
+          0,
+          0,
+          null,
+          0,
+          null,
+          null,
+          null,
+          1,
+          null,
+          1,
+          0,
+          null,
+          null
+        ]
       }
     },
-    "timestamp": 1735116365
+    "timestamp": 1735123495
   }
 }
