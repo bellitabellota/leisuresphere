@@ -14,4 +14,26 @@ RSpec.describe "User-Follow associations", type: :model do
       expect(second_user.followees).to include(user)
     end
   end
+
+  context "when the followee is destroyed" do
+    it "the associated follow is destroyed as well" do
+      follower = FactoryBot.create(:user)
+      followee_for_deletion = FactoryBot.create(:second_user)
+      FactoryBot.create(:follow, followee_id: followee_for_deletion.id, follower_id: follower.id)
+      followee_for_deletion.destroy
+
+      expect(Follow.where(followee_id: followee_for_deletion.id)).to be_empty
+    end
+  end
+
+  context "when the follower is destroyed" do
+    it "the associated follow is destroyed as well" do
+      follower_for_deletion = FactoryBot.create(:user)
+      followee = FactoryBot.create(:second_user)
+      FactoryBot.create(:follow, followee_id: followee.id, follower_id: follower_for_deletion.id)
+      follower_for_deletion.destroy
+
+      expect(Follow.where(follower_id: follower_for_deletion.id)).to be_empty
+    end
+  end
 end
