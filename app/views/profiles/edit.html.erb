@@ -1,17 +1,46 @@
 <h1>Edit Profile</h1>
 
+<% if @profile.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@profile.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+    <ul>
+    <% @profile.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
 <%= form_with model:@profile do |form| %>
-    <%= form.label :birthday, "Birthday:" %>
-    <%= form.date_field :birthday %>
+	<%= form.label :birthday, "Birthday:" %>
+	<%= form.date_field :birthday %>
 
-    <%= form.label :location, "Place of Residence:" %>
-    <%= form.text_field :location%>
+	<%= form.label :location, "Place of Residence:" %>
+	<%= form.text_field :location%>
 
-    <%= form.label :interests, "Interests:" %>
-    <%= form.text_area :interests %>
+	<%= form.label :interests, "Interests:" %>
+	<%= form.text_area :interests %>
+	<hr>
 
-    <%= form.label :avatar_url, "Image URL:" %>
-    <%= form.text_field :avatar_url %>
+	<% if @profile.profile_picture.attached? && @profile.profile_picture.representable? %>
+		<p>Current image:</p>
+		<%= image_tag @profile.profile_picture.variant(resize_to_fit: [100, 100]).processed %>
+			<%= link_to "Delete and revert to Gravatar, Google or default image",
+				delete_image_profile_url(image_id: @profile.profile_picture.id),
+				data: { turbo_method: :delete,
+				turbo_confirm: "Are you sure?" }
+			%>
+		</div>
+	<% else %>
+				<p>Current profile picture: </p>
+				<%= image_tag @profile.avatar_url, size: "100x100" %>
+			<div class="upload-hider-fields">
+				<p>Upload a different one:</p>
+				<%= form.file_field :profile_picture, class:"form-control" %>
+			</div>
+	<% end %>
+	<hr>
 
-    <%= form.submit %>
+	<%= form.submit %>
 <% end %>

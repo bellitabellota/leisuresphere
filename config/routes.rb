@@ -9,7 +9,12 @@ Rails.application.routes.draw do
   resources :follows, only: [ :index, :create, :destroy ]
   resources :users, only: [ :index, :destroy ]
   resources :likes, only: [ :create, :destroy ]
-  resources :profiles, only: [ :show, :edit, :update ]
+
+  resources :profiles, only: [ :show, :edit, :update ] do
+    member do
+      delete "delete_image/:image_id", action: "delete_image", as: "delete_image"
+    end
+  end
 
   resources :posts, except: [ :show ] do
     resources :comments, only: [ :new, :create, :edit, :update, :destroy ]

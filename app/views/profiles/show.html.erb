@@ -1,5 +1,11 @@
 <h1>Profile Information</h1>
-<img src="<%= @profile.avatar_url %>" alt="profile-picture">
+<% if @profile.profile_picture.attached? %>
+  <%= image_tag url_for(@profile.profile_picture.variant(resize_to_fit: [100, 100]).processed) %>
+<% else %>
+  <%= image_tag @profile.avatar_url, size: "100x100", alt: "profile-picture"%>
+<% end %>
+
+
 <p>Username: <%= @profile.user.name %></p>
 <p>Birthday: <%= @profile.birthday || "—" %></p>
 <p>Place of Residence: <%= @profile.location || "—" %></p>

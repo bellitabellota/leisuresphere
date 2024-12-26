@@ -10,17 +10,24 @@ class ProfilesController < ApplicationController
 
   def update
     @profile = Profile.find(params[:id])
-
     if @profile.update(profile_params)
       redirect_to profile_path(@profile)
     else
-      render edit:, status: :unprocessable_entity
+      @profile.profile_picture = nil
+      render :edit, status: :unprocessable_entity
     end
+  end
+
+  def delete_image
+    image = ActiveStorage::Attachment.find(params[:image_id])
+
+    image.purge
+    redirect_back(fallback_location: request.referrer)
   end
 
   private
 
   def profile_params
-    params.require(:profile).permit(:birthday, :location, :interests, :avatar_url)
+    params.require(:profile).permit(:birthday, :location, :interests, :avatar_url, :profile_picture)
   end
 end
