@@ -432,9 +432,7 @@
           1,
           1,
           1,
-          1,
           null,
-          1,
           1,
           1,
           1,
@@ -477,6 +475,8 @@
       },
       "/home/bella--1/Desktop/Rails/leisuresphere/app/models/profile.rb": {
         "lines": [
+          1,
+          1,
           1,
           1,
           null
@@ -748,6 +748,7 @@
           1,
           1,
           2,
+          2,
           null,
           null,
           1,
@@ -756,12 +757,19 @@
           null,
           1,
           1,
-          null,
           1,
           1,
           null,
           0,
+          0,
           null,
+          null,
+          null,
+          1,
+          0,
+          null,
+          0,
+          0,
           null,
           null,
           1,
@@ -773,6 +781,6 @@
         ]
       }
     },
-    "timestamp": 1735130482
+    "timestamp": 1735218817
   }
 }
