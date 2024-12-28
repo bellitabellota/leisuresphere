@@ -10,4 +10,5 @@
         <p class="post-date"><%= post.created_at.strftime("%d %B %Y") %></p>
         <%= image_tag url_for(post.body.variant(resize_to_fit: [100, 100]).processed) %>
         <%= link_to "Change Image", edit_image_post_path(post) %>
+        <%= link_to "Delete Image", image_post_path(post), data: { turbo_method: :delete } %>
 <% end %>

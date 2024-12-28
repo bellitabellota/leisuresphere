@@ -31,6 +31,13 @@ class ImagePostsController < ApplicationController
     end
   end
 
+  def destroy
+    @image_post = ImagePost.find(params[:id])
+
+    @image_post.destroy
+    redirect_to image_posts_path, status: :see_other
+  end
+
   private
 
   def image_post_params
