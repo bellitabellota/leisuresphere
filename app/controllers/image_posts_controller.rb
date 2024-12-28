@@ -17,6 +17,20 @@ class ImagePostsController < ApplicationController
     end
   end
 
+  def edit
+    @image_post = ImagePost.find(params[:id])
+  end
+
+  def update
+    @image_post = ImagePost.find(params[:id])
+
+    if @image_post.update(image_post_params)
+      redirect_to image_posts_path
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
   private
 
   def image_post_params

@@ -22,7 +22,7 @@ Rails.application.routes.draw do
 
 
   ## delete #index from image_posts once image_posts are displayed at post#index
-  resources :image_posts, only: [ :index, :new, :create ]
+  resources :image_posts, only: [ :index, :new, :create, :edit, :update ]
 
 
 
