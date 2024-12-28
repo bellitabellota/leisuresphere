@@ -35,10 +35,8 @@
 	<% else %>
 				<p>Current profile picture: </p>
 				<%= image_tag @profile.avatar_url, size: "100x100" %>
-			<div class="upload-hider-fields">
 				<p>Upload a different one:</p>
-				<%= form.file_field :profile_picture, class:"form-control" %>
-			</div>
+				<%= form.file_field :profile_picture %>
 	<% end %>
 	<hr>
 
