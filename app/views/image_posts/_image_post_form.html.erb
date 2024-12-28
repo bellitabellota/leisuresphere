@@ -1,0 +1,17 @@
+<% if image_post.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(image_post.errors.count, "error") %> prohibited this image from being saved:</h2>
+
+    <ul>
+    <% image_post.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<%= form_with model:image_post do |form| %>
+  <%= form.file_field :body %>
+  <%= form.submit submit_button_text %>
+<% end %>
+

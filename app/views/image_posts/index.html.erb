@@ -1,0 +1,12 @@
+<!--delete image_posts#index view once feature is fully implemented-->
+
+<h1>Image Posts:</h1>
+<%= link_to "Post New Image", new_image_post_path %>
+
+
+
+<% @image_posts.each do |post| %>
+<h3><%= link_to "#{post.author.name}", profile_path(post.author.profile.id) %></h3>
+        <p class="post-date"><%= post.created_at.strftime("%d %B %Y") %></p>
+        <%= image_tag url_for(post.body.variant(resize_to_fit: [100, 100]).processed) %>
+<% end %>

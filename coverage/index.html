@@ -13,7 +13,7 @@
       <img src="./assets/0.13.1/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2024-12-26T13:13:37+00:00">2024-12-26T13:13:37+00:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2024-12-28T15:07:32+00:00">2024-12-28T15:07:32+00:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -22,7 +22,7 @@
     <span class="group_name">All Files</span>
     (<span class="covered_percent">
       <span class="green">
-  97.22%
+  97.35%
 </span>
 
      </span>
@@ -38,15 +38,15 @@
   <a name="AllFiles"></a>
 
   <div>
-    <b>30</b> files in total.
+    <b>32</b> files in total.
   </div>
 
   <div class="t-line-summary">
-    <b>395</b> relevant lines,
-    <span class="green"><b>384</b> lines covered</span> and
+    <b>415</b> relevant lines,
+    <span class="green"><b>404</b> lines covered</span> and
     <span class="red"><b>11</b> lines missed. </span>
     (<span class="green">
-  97.22%
+  97.35%
 </span>
 )
   </div>
@@ -180,6 +180,17 @@
           </tr>
         
           <tr class="t-file">
+            <td class="strong t-file__name"><a href="#30f20e85b7a19793cff9d4034296e91d6b8337f8" class="src_link" title="app/models/image_post.rb">app/models/image_post.rb</a></td>
+            <td class="green strong cell--number t-file__coverage">100.00 %</td>
+            <td class="cell--number">6</td>
+            <td class="cell--number">4</td>
+            <td class="cell--number">4</td>
+            <td class="cell--number">0</td>
+            <td class="cell--number">1.00</td>
+            
+          </tr>
+        
+          <tr class="t-file">
             <td class="strong t-file__name"><a href="#1844590d81a22651fc3580fd9ecf4e42994bd1ef" class="src_link" title="app/models/like.rb">app/models/like.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
             <td class="cell--number">4</td>
@@ -229,6 +240,17 @@
             <td class="cell--number">39</td>
             <td class="cell--number">24</td>
             <td class="cell--number">24</td>
+            <td class="cell--number">0</td>
+            <td class="cell--number">1.25</td>
+            
+          </tr>
+        
+          <tr class="t-file">
+            <td class="strong t-file__name"><a href="#668fc7ffd4bb5b0f4ae84a380aec0d1f6b1a85ce" class="src_link" title="spec/models/user_image_post_association_spec.rb">spec/models/user_image_post_association_spec.rb</a></td>
+            <td class="green strong cell--number t-file__coverage">100.00 %</td>
+            <td class="cell--number">28</td>
+            <td class="cell--number">16</td>
+            <td class="cell--number">16</td>
             <td class="cell--number">0</td>
             <td class="cell--number">1.25</td>
             
@@ -3286,6 +3308,105 @@
 </div>
 
       
+        <div class="source_table" id="30f20e85b7a19793cff9d4034296e91d6b8337f8">
+  <div class="header">
+    <h3>app/models/image_post.rb</h3>
+    <h4>
+      <span class="green">
+  100.0%
+</span>
+
+      lines covered
+    </h4>
+
+    
+
+    <div class="t-line-summary">
+      <b>4</b> relevant lines.
+      <span class="green"><b>4</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
+    </div>
+
+    
+
+  </div>
+
+  <pre>
+    <ol>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="1">
+            
+              <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">class ImagePost &lt; ApplicationRecord</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="2">
+            
+              <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  belongs_to :author, class_name: &quot;User&quot;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="3">
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="4">
+            
+              <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  has_one_attached :body, dependent: :destroy</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="5">
+            
+              <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    validates :body, content_type: [ :png, :jpg, :jpeg ]</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="6">
+            
+
+            
+
+            <code class="ruby">end</code>
+          </li>
+        </div>
+      
+    </ol>
+  </pre>
+</div>
+
+      
         <div class="source_table" id="1844590d81a22651fc3580fd9ecf4e42994bd1ef">
   <div class="header">
     <h3>app/models/like.rb</h3>
@@ -4212,6 +4333,349 @@
       
         <div>
           <li class="never" data-hits="" data-linenumber="39">
+            
+
+            
+
+            <code class="ruby">end</code>
+          </li>
+        </div>
+      
+    </ol>
+  </pre>
+</div>
+
+      
+        <div class="source_table" id="668fc7ffd4bb5b0f4ae84a380aec0d1f6b1a85ce">
+  <div class="header">
+    <h3>spec/models/user_image_post_association_spec.rb</h3>
+    <h4>
+      <span class="green">
+  100.0%
+</span>
+
+      lines covered
+    </h4>
+
+    
+
+    <div class="t-line-summary">
+      <b>16</b> relevant lines.
+      <span class="green"><b>16</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
+    </div>
+
+    
+
+  </div>
+
+  <pre>
+    <ol>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="1">
+            
+              <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">require &#39;rails_helper&#39;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="2">
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="3">
+            
+              <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">RSpec.describe &quot;User-ImagePost associations&quot;, type: :model do</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="3" data-linenumber="4">
+            
+              <span class="hits">3</span>
+            
+
+            
+
+            <code class="ruby">  let(:user) { FactoryBot.create(:user) }</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="3" data-linenumber="5">
+            
+              <span class="hits">3</span>
+            
+
+            
+
+            <code class="ruby">  let(:image_post) { FactoryBot.create(:image_post, author_id: user.id) }</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="6">
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="7">
+            
+              <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  context &quot;querying the image_post&#39;s author&quot; do</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="8">
+            
+              <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    it &quot;returns the author of the image_post&quot; do</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="9">
+            
+              <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      expect(image_post.author).to eq(user)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="10">
+            
+
+            
+
+            <code class="ruby">    end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="11">
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="12">
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="13">
+            
+              <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  context &quot;querying a user&#39;s image_posts&quot; do</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="14">
+            
+              <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    it &quot;returns a collection that includes the image_post of the user&quot; do</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="15">
+            
+              <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      expect(user.image_posts).to include(image_post)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="16">
+            
+
+            
+
+            <code class="ruby">    end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="17">
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="18">
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="19">
+            
+              <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  context &quot;deleting a user&quot; do</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="20">
+            
+              <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    it &quot;deletes his/her authored image_posts as well&quot; do</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="21">
+            
+              <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      user_for_deletion = FactoryBot.create(:user)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="22">
+            
+              <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      FactoryBot.create(:image_post, author_id: user_for_deletion.id)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="23">
+            
+              <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      user_for_deletion.destroy</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="24">
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="25">
+            
+              <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      expect(ImagePost.where(author_id: user_for_deletion.id)).to be_empty</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="26">
+            
+
+            
+
+            <code class="ruby">    end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="27">
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="28">
             
 
             
