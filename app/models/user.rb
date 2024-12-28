@@ -17,6 +17,7 @@ class User < ApplicationRecord
   has_many :followees, through: :follows, source: :followee
 
   has_many :posts, inverse_of: "author", dependent: :destroy
+  has_many :image_posts, inverse_of: "author", dependent: :destroy
 
   has_many :likes, foreign_key: :liker_id, dependent: :destroy
   has_many :liked_posts, through: :likes
