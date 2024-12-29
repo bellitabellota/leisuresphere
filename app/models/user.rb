@@ -20,7 +20,8 @@ class User < ApplicationRecord
   has_many :image_posts, inverse_of: "author", dependent: :destroy
 
   has_many :likes, foreign_key: :liker_id, dependent: :destroy
-  has_many :liked_posts, through: :likes
+  has_many :liked_posts, through: :likes, source: :likeable, source_type: "Post"
+  has_many :liked_image_posts, through: :likes, source: :likeable, source_type: "Image"
 
   has_many :comments, inverse_of: "commenter", dependent: :destroy
 
@@ -39,6 +40,10 @@ class User < ApplicationRecord
   end
 
   private
+
+  def likeables
+    likes.includes(:likeable).map { |like| like.likeable }
+  end
 
   def create_profile
     avatar_url = @avatar_url || get_avatar_url
