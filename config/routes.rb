@@ -4,7 +4,8 @@ Rails.application.routes.draw do
     sessions: "users/sessions",
     omniauth_callbacks: "users/omniauth_callbacks"
   }
-  root "posts#index"
+
+  root "feed#show"
 
   resources :follows, only: [ :index, :create, :destroy ]
   resources :users, only: [ :index, :destroy ]
@@ -16,17 +17,15 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :posts, except: [ :show ] do
+  resources :posts, except: [ :index, :show ] do
     resources :comments, only: [ :new, :create, :edit, :update, :destroy ]
   end
 
-
-  ## delete #index from image_posts once image_posts are displayed at post#index
-  resources :image_posts, only: [ :index, :new, :create, :edit, :update, :destroy ] do
+  resources :image_posts, only: [ :new, :create, :edit, :update, :destroy ] do
     resources :comments, only: [ :new, :create, :edit, :update, :destroy ]
   end
 
-
+  resource :feed, only: :show
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

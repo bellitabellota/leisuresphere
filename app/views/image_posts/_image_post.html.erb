@@ -1,0 +1,29 @@
+  <h3><%= link_to "#{image_post.author.name}", profile_path(image_post.author.profile.id) %></h3>
+  <p><%= image_post.created_at.strftime("%d %B %Y") %></p>
+
+  <% if post.author == current_user %>
+    <div class="author-options">
+      <%= link_to "Change Image", edit_image_post_path(image_post) %>
+      <%= link_to "Delete Image", image_post_path(image_post), data: { turbo_method: :delete } %>
+    </div>
+  <% end %>
+
+  <%= image_tag url_for(image_post.body.variant(resize_to_fit: [100, 100]).processed) %>
+
+  <p><%= image_post.likers.size %> Likes</p>
+  <% if image_post.likers.include?(current_user) %>
+    <%= link_to "Remove Like", like_path(image_post.likes.find_by(liker_id: current_user.id)), data: { turbo_method: :delete }%>
+  <% else %>
+    <%= link_to "Like", likes_path(likeable_id: image_post.id, likeable_type: "ImagePost", liker_id: current_user.id), data: { turbo_method: :post } %>
+  <% end %>
+
+  <%= link_to "Add Comment", new_image_post_comment_path(image_post) %>
+  <% if image_post.comments %>
+    <% image_post.comments.each do |comment| %>
+      <p><%= link_to "#{comment.commenter.name}", profile_path(comment.commenter.profile.id) %>: <%= comment.body %></p>
+      <% if comment.commenter == current_user %>
+      <%= link_to "Edit Comment", edit_image_post_comment_path(image_post, comment)%>
+      <%= link_to "Delete Comment", image_post_comment_path(image_post, comment), data: { turbo_method: :delete } %>
+      <% end %>
+    <% end %>
+  <% end %>
