@@ -5,7 +5,7 @@ RSpec.describe "Update a comment using button on post#index page", type: :system
     it "updated comment is displayed" do
       user = FactoryBot.create(:user)
       post = FactoryBot.create(:post, author_id: user.id)
-      FactoryBot.create(:comment, commenter_id: user.id, post_id: post.id, body: "A comment to be updated.")
+      FactoryBot.create(:comment, commenter_id: user.id, commentable_id: post.id, commentable_type: "Post", body: "A comment to be updated.")
 
       login_as(user)
       visit root_path
@@ -20,7 +20,7 @@ RSpec.describe "Update a comment using button on post#index page", type: :system
     it "error message is displayed" do
       user = FactoryBot.create(:user)
       post = FactoryBot.create(:post, author_id: user.id)
-      FactoryBot.create(:comment, commenter_id: user.id, post_id: post.id, body: "A comment to be updated.")
+      FactoryBot.create(:comment, commenter_id: user.id, commentable_id: post.id, commentable_type: "Post", body: "A comment to be updated.")
 
       login_as(user)
       visit root_path

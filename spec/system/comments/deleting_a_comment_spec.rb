@@ -4,7 +4,7 @@ RSpec.describe "Delete a comment using button on post#index page", type: :system
   it "comment is not displayed on post#index" do
     user = FactoryBot.create(:user)
     post = FactoryBot.create(:post, author_id: user.id)
-    FactoryBot.create(:comment, commenter_id: user.id, post_id: post.id, body: "A comment waiting for deletion.")
+    FactoryBot.create(:comment, commenter_id: user.id, commentable_id: post.id, commentable_type: "Post", body: "A comment waiting for deletion.")
 
     login_as(user)
     visit root_path
