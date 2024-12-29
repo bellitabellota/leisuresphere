@@ -5,7 +5,7 @@ RSpec.describe "Remove Like from a post", type: :system do
     it "decreases the like count by 1" do
       user = FactoryBot.create(:user)
       post = FactoryBot.create(:post, author_id: user.id)
-      FactoryBot.create(:like, liked_post_id: post.id, liker_id: user.id)
+      FactoryBot.create(:like, likeable_id: post.id, likeable_type: "Post", liker_id: user.id)
 
       login_as user
       visit root_path
