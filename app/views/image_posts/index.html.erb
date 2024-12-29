@@ -12,6 +12,13 @@
         <%= link_to "Change Image", edit_image_post_path(image_post) %>
         <%= link_to "Delete Image", image_post_path(image_post), data: { turbo_method: :delete } %>
 
+        <p><%= image_post.likers.size %> Likes</p>
+        <% if image_post.likers.include?(current_user) %>
+          <%= link_to "Remove Like", like_path(image_post.likes.find_by(liker_id: current_user.id)), data: { turbo_method: :delete }%>
+        <% else %>
+          <%= link_to "Like", likes_path(likeable_id: image_post.id, likeable_type: "ImagePost", liker_id: current_user.id), data: { turbo_method: :post } %>
+        <% end %>
+
         <%= link_to "Add Comment", new_image_post_comment_path(image_post) %>
         <% if image_post.comments %>
           <% image_post.comments.each do |comment| %>

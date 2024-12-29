@@ -19,9 +19,9 @@
         <p class="post-body"><%= post.body %></p>
         <p><%= post.likers.size %> Likes</p>
         <% if post.likers.include?(current_user) %>
-          <%= link_to "Remove Like", like_path(post.likes.find_by(liker_id: current_user.id)), data: { "turbo-method": :delete }%>
+          <%= link_to "Remove Like", like_path(post.likes.find_by(liker_id: current_user.id)), data: { turbo_method: :delete }%>
         <% else %>
-          <%= link_to "Like", likes_path(liked_post_id: post.id, liker_id: current_user.id), data: { "turbo-method": :post } %>
+          <%= link_to "Like", likes_path(likeable_id: post.id, likeable_type: "Post", liker_id: current_user.id), data: { turbo_method: :post } %>
         <% end %>
 
         <%= link_to "Add Comment", new_post_comment_path(post_id: post.id) %>

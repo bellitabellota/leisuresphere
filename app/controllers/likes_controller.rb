@@ -1,6 +1,6 @@
 class LikesController < ApplicationController
   def create
-    @like = Like.new(liked_post_id: params[:liked_post_id], liker_id: params[:liker_id])
+    @like = Like.new(likeable_id: params[:likeable_id], likeable_type: params[:likeable_type], liker_id: params[:liker_id])
 
     if @like.save
       redirect_to root_path
