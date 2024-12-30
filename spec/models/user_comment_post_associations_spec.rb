@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.describe "Comment-User and Comment-Post associations" do
+RSpec.describe "User-Comment-Post associations" do
   let(:user) { FactoryBot.create(:user) }
   let(:post) { FactoryBot.create(:post) }
   let!(:comment) { FactoryBot.create(:comment, commentable_id: post.id, commentable_type: "Post", commenter_id: user.id) }
