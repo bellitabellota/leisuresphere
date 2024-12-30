@@ -39,11 +39,11 @@ class User < ApplicationRecord
     end
   end
 
-  private
-
   def likeables
     likes.includes(:likeable).map { |like| like.likeable }
   end
+
+  private
 
   def create_profile
     avatar_url = @avatar_url || get_avatar_url
