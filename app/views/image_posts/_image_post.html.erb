@@ -1,7 +1,7 @@
   <h3><%= link_to "#{image_post.author.name}", profile_path(image_post.author.profile.id) %></h3>
   <p><%= image_post.created_at.strftime("%d %B %Y") %></p>
 
-  <% if post.author == current_user %>
+  <% if image_post.author == current_user %>
     <div class="author-options">
       <%= link_to "Change Image", edit_image_post_path(image_post) %>
       <%= link_to "Delete Image", image_post_path(image_post), data: { turbo_method: :delete } %>
