@@ -21,7 +21,7 @@ class User < ApplicationRecord
 
   has_many :likes, foreign_key: :liker_id, dependent: :destroy
   has_many :liked_posts, through: :likes, source: :likeable, source_type: "Post"
-  has_many :liked_image_posts, through: :likes, source: :likeable, source_type: "Image"
+  has_many :liked_image_posts, through: :likes, source: :likeable, source_type: "ImagePost"
 
   has_many :comments, inverse_of: "commenter", dependent: :destroy
 
