@@ -7,7 +7,6 @@ RSpec.describe "User-Like-Post associations", type: :model do
 
   context "when user likes a post" do
     it "user.liked_posts returns a collection that includes the post" do
-      p like
       expect(user.liked_posts).to include(post)
     end
 
