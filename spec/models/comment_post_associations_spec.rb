@@ -8,6 +8,10 @@ RSpec.describe "Comment-Post associations" do
     it "post.comments returns a collection that includes the comment" do
       expect(post.comments).to include(comment)
     end
+
+    it "comment.commentable returns the post" do
+      expect(comment.commentable).to eq(post)
+    end
   end
 
   context "deleting a post" do
