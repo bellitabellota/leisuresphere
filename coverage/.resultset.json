@@ -10,34 +10,50 @@
           null
         ]
       },
+      "/home/bella--1/Desktop/Rails/leisuresphere/app/models/image_post.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null
+        ]
+      },
       "/home/bella--1/Desktop/Rails/leisuresphere/app/controllers/image_posts_controller.rb": {
         "lines": [
           1,
           1,
-          3,
+          0,
           null,
           null,
           1,
-          3,
+          0,
           null,
+          0,
+          0,
+          null,
+          0,
+          0,
+          null,
+          null,
+          null,
+          1,
           2,
-          1,
-          null,
-          1,
-          1,
-          null,
           null,
           null,
           1,
-          0,
-          null,
+          1,
           null,
           1,
           0,
           null,
           0,
-          0,
-          null,
           0,
           null,
           null,
@@ -52,7 +68,7 @@
           1,
           null,
           1,
-          3,
+          1,
           null,
           null
         ]
@@ -87,80 +103,8 @@
           1,
           null
         ]
-      },
-      "/home/bella--1/Desktop/Rails/leisuresphere/app/models/image_post.rb": {
-        "lines": [
-          1,
-          1,
-          null,
-          1,
-          null,
-          1,
-          1,
-          null,
-          1,
-          1,
-          null
-        ]
-      },
-      "/home/bella--1/Desktop/Rails/leisuresphere/app/controllers/feed_controller.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          null,
-          1,
-          null,
-          null,
-          1,
-          null,
-          null,
-          2,
-          null,
-          null
-        ]
-      },
-      "/home/bella--1/Desktop/Rails/leisuresphere/app/models/follow.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          null
-        ]
-      },
-      "/home/bella--1/Desktop/Rails/leisuresphere/app/models/post.rb": {
-        "lines": [
-          1,
-          1,
-          null,
-          1,
-          1,
-          null,
-          1,
-          null,
-          1,
-          null
-        ]
-      },
-      "/home/bella--1/Desktop/Rails/leisuresphere/app/models/like.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          null
-        ]
-      },
-      "/home/bella--1/Desktop/Rails/leisuresphere/app/models/comment.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          null,
-          1,
-          null
-        ]
       }
     },
-    "timestamp": 1735641254
+    "timestamp": 1735644639
   }
 }
