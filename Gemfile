@@ -76,3 +76,4 @@ gem "omniauth-rails_csrf_protection", "~> 1.0"
 gem "simplecov", require: false, group: :test
 
 gem "aws-sdk-s3", require: false
+gem "active_storage_validations"
