@@ -54,9 +54,11 @@ class User < ApplicationRecord
   def get_avatar_url
     email_address = self.email.downcase
     hash = Digest::SHA256.hexdigest(email_address)
+    default = "https://gravatar.com/avatar/a47180966cb267ff0a5f1eff87e5d952?size=256"
     size= 200
 
-    params = URI.encode_www_form("s" => size)
+    params = URI.encode_www_form("d" => default, "s" => size)
+
     "https://www.gravatar.com/avatar/#{hash}?#{params}"
   end
 end
