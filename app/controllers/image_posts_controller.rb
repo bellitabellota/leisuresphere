@@ -7,8 +7,9 @@ class ImagePostsController < ApplicationController
     @image_post = current_user.image_posts.build(image_post_params)
 
     if @image_post.save
-      redirect_to image_posts_path
+      redirect_to root_path
     else
+      @image_post.body = nil
       render :new, status: :unprocessable_entity
     end
   end
@@ -21,7 +22,7 @@ class ImagePostsController < ApplicationController
     @image_post = ImagePost.find(params[:id])
 
     if @image_post.update(image_post_params)
-      redirect_to image_posts_path
+      redirect_to root_path
     else
       render :edit, status: :unprocessable_entity
     end
@@ -31,7 +32,7 @@ class ImagePostsController < ApplicationController
     @image_post = ImagePost.find(params[:id])
 
     @image_post.destroy
-    redirect_to image_posts_path, status: :see_other
+    redirect_to root_path, status: :see_other
   end
 
   private
