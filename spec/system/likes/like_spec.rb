@@ -14,4 +14,18 @@ RSpec.describe "Like a post", type: :system do
       expect(page).to have_content("1 Likes")
     end
   end
+
+  context "when current_user likes an image post" do
+    it "the like count increases by 1" do
+      user = FactoryBot.create(:user)
+      FactoryBot.create(:image_post, author_id: user.id)
+
+      login_as user
+      visit root_path
+      expect(page).to have_content("0 Likes")
+      click_on "Like"
+
+      expect(page).to have_content("1 Likes")
+    end
+  end
 end

@@ -1,6 +1,41 @@
 {
   "RSpec": {
     "coverage": {
+      "/home/bella--1/Desktop/Rails/leisuresphere/spec/system/likes/remove_like_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
       "/home/bella--1/Desktop/Rails/leisuresphere/app/models/profile.rb": {
         "lines": [
           1,
@@ -24,29 +59,19 @@
           null
         ]
       },
-      "/home/bella--1/Desktop/Rails/leisuresphere/app/models/comment.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          null,
-          1,
-          null
-        ]
-      },
       "/home/bella--1/Desktop/Rails/leisuresphere/app/controllers/feed_controller.rb": {
         "lines": [
           1,
           1,
-          4,
+          8,
           null,
-          4,
-          null,
-          null,
-          4,
+          8,
           null,
           null,
           8,
+          null,
+          null,
+          16,
           null,
           null
         ]
@@ -113,37 +138,26 @@
           null
         ]
       },
-      "/home/bella--1/Desktop/Rails/leisuresphere/app/controllers/comments_controller.rb": {
+      "/home/bella--1/Desktop/Rails/leisuresphere/app/models/comment.rb": {
         "lines": [
           1,
           1,
-          0,
-          0,
-          null,
+          1,
           null,
           1,
-          0,
-          0,
-          null,
-          0,
-          0,
-          null,
-          0,
-          null,
-          null,
-          null,
+          null
+        ]
+      },
+      "/home/bella--1/Desktop/Rails/leisuresphere/app/controllers/likes_controller.rb": {
+        "lines": [
           1,
-          0,
-          0,
-          null,
-          null,
           1,
-          0,
-          0,
+          2,
+          null,
+          2,
+          2,
           null,
           0,
-          0,
-          null,
           0,
           null,
           null,
@@ -152,28 +166,11 @@
           2,
           2,
           2,
-          null,
-          null,
-          1,
-          null,
-          1,
-          0,
-          null,
-          null,
-          1,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          null,
-          null,
           null,
           null
         ]
       }
     },
-    "timestamp": 1735653244
+    "timestamp": 1735653434
   }
 }
