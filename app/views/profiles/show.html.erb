@@ -13,7 +13,7 @@
 
 <% if current_user == @profile.user %>
 	<%= link_to "Edit Profile", edit_profile_path(@profile) %>
-	<%= link_to "Delete Account", user_path(current_user), data: { "turbo-method": :delete } %>
+	<%= link_to "Delete Account", user_path(current_user), data: { turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
 <% end %>
 
 <% if @posts.any? %>
@@ -24,7 +24,7 @@
         <% if @profile.user == current_user %>
           <div class="author-options">
             <%= link_to "Edit Post", edit_post_path(post) %>
-            <%= link_to "Delete Post", post_path(post), data: { "turbo-method": :delete } %>
+            <%= link_to "Delete Post", post_path(post), data: { turbo_method: :delete } %>
           </div>
         <% end %>
         
