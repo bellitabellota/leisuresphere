@@ -24,6 +24,7 @@ class ImagePostsController < ApplicationController
     if @image_post.update(image_post_params)
       redirect_to root_path
     else
+      @image_post.body = nil
       render :edit, status: :unprocessable_entity
     end
   end
