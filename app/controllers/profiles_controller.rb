@@ -14,6 +14,11 @@ class ProfilesController < ApplicationController
     if @profile.update(profile_params) && @user.update(user_name_param)
       redirect_to profile_path(@profile)
     else
+      user = User.find_by(user_name_param)
+      if user != current_user && user
+        flash[:alert] = "The username must be unique."
+      end
+
       @profile.profile_picture = nil
       render :edit, status: :unprocessable_entity
     end
