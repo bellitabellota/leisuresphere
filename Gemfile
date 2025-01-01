@@ -76,3 +76,5 @@ gem "simplecov", require: false, group: :test
 
 gem "aws-sdk-s3", require: false
 gem "active_storage_validations"
+
+ruby "3.3.4"
