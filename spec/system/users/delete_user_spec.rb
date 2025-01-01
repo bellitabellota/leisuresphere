@@ -6,10 +6,11 @@ RSpec.describe "Delete a user/user's account", type: :system do
     login_as(user)
     visit profile_path(user.profile)
     click_on "Delete Account"
+    accept_alert
     expect(page).to have_content("Log in")
-    fill_in "Email", with: user.email
+    fill_in "Login", with: user.email
     fill_in "Password", with: user.password
     click_on "Log in"
-    expect(page).to have_content("Invalid Email or password.")
+    expect(page).to have_content("Invalid Login or password.")
   end
 end
