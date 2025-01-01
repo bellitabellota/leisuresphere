@@ -13,6 +13,11 @@
 <% end %>
 
 <%= form_with model:@profile do |form| %>
+	<%= form.fields_for :user, current_user do |subform| %>
+		<%= subform.label :name %>
+		<%= subform.text_field :name %>
+	<% end %>
+
 	<%= form.label :birthday, "Birthday:" %>
 	<%= form.date_field :birthday %>
 

@@ -10,7 +10,8 @@ class ProfilesController < ApplicationController
 
   def update
     @profile = Profile.find(params[:id])
-    if @profile.update(profile_params)
+    @user = User.find(current_user.id)
+    if @profile.update(profile_params) && @user.update(user_name_param)
       redirect_to profile_path(@profile)
     else
       @profile.profile_picture = nil
@@ -29,5 +30,9 @@ class ProfilesController < ApplicationController
 
   def profile_params
     params.require(:profile).permit(:birthday, :location, :interests, :avatar_url, :profile_picture)
+  end
+
+  def user_name_param
+    params.require(:profile).require(:user).permit(:name)
   end
 end
