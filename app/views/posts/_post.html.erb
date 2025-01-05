@@ -12,10 +12,10 @@
     </div>
 
   <% if post.author == current_user %>
-    <button class="menu-button">
+    <button class="menu-button" data-controller="toggle" data-toggle-change-class="hidden" data-action="click->toggle#toggle">
       <%= image_tag "icons/vecteezy_three-dots-or-more-icon_15197822.jpg", size: "30x30", class:"menu", alt:"menu" %>
 
-      <div class="author-options">
+      <div class="author-options hidden" data-toggle-target="elem">
         <p><%= link_to "Edit Post", edit_post_path(post) %></p>
         <p><%= link_to "Delete Post", post_path(post), data: { turbo_method: :delete } %></p>
       </div>
