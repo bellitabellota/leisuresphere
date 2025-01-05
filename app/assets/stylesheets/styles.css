@@ -1,0 +1,103 @@
+/* Global styles */
+
+body {
+	background-color: rgba(189, 230, 189, 0.473);
+  font-family: "Inter var", sans-serif;
+}
+
+/* Style for Feed */
+.feed-items{
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	margin-left: auto;
+	margin-right: auto;
+	width: clamp(500px, 33vw, 650px)
+}
+
+/* Style for post item */
+
+.feed-item {
+	background-color: white;
+	padding: 10px 15px;
+	border-radius: 10px;
+	box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.178);
+}
+
+.post-header {
+	display: flex;
+	gap: 10px;
+	align-items: center;
+}
+
+.post-meta-data {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+}
+
+.post-header .profile-picture {
+	box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.178);
+}
+
+.post-header .profile-picture, .post-header .menu-button img {
+	width: fit-content;
+	border-radius: 20px;
+}
+
+.post-author a {
+	text-decoration: none;
+	color: black;
+	font-size: 14px;
+	font-weight: 600;
+	transition: 0.15s;
+}
+
+.post-author a:hover, .post-author:focus {
+	text-decoration: underline;
+}
+
+.post-date {
+	color: rgba(0, 0, 0, 0.733);
+	font-size: 12px;
+}
+
+.menu-button {
+	position: relative;
+	background-color: white;
+	border:none;
+}
+
+.menu-button img:hover, .menu-button img:focus {
+	box-shadow: 1px 1px 4px rgba(116, 116, 116, 0.678);
+}
+
+.menu-button .author-options {
+	position: absolute;
+	top: 20px;
+	right: 0;
+	background-color: rgb(231, 229, 229);
+	width: fit-content;
+	white-space: nowrap;
+	padding: 5px 10px;
+	border-radius: 5px;
+	box-shadow: 1px 1px 2px rgba(116, 116, 116, 0.808);
+	opacity: 0;
+	transition: opacity 0.15s;
+}
+
+.menu-button:active .author-options {
+	opacity:1;
+}
+
+.menu-button .author-options a {
+	text-decoration: none;
+	font-size: 14px;
+	color: black;
+}
+
+.menu-button .author-options a:hover, .menu-button .author-options a:focus {
+	text-decoration: underline;
+}
+
