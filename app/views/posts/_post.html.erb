@@ -1,4 +1,5 @@
 <div class="feed-item">
+
   <div class="post-header">
     <% if post.author.profile.profile_picture.attached? %>
       <%= image_tag url_for(post.author.profile.profile_picture.variant(resize_to_fit: [40, 40]).processed), class: "profile-picture", alt: "" %>
@@ -11,16 +12,18 @@
       <p class="post-date"><%= post.created_at.strftime("%d %B %Y") %></p>
     </div>
 
-  <% if post.author == current_user %>
-    <button class="menu-button" data-controller="toggle" data-toggle-change-class="hidden" data-action="click->toggle#toggle">
-      <%= image_tag "icons/vecteezy_three-dots-or-more-icon_15197822.jpg", size: "30x30", class:"menu", alt:"menu" %>
+    <div class="menu-button-container" data-controller="toggle" data-toggle-change-class="hidden">
+      <% if post.author == current_user %>
+        <button class ="menu-button" data-action="click->toggle#toggle">
+          <%= image_tag "icons/vecteezy_three-dots-or-more-icon_15197822.jpg", size: "30x30", class:"menu", alt:"menu" %>
+        </button>
 
-      <div class="author-options hidden" data-toggle-target="elem">
-        <p><%= link_to "Edit Post", edit_post_path(post) %></p>
-        <p><%= link_to "Delete Post", post_path(post), data: { turbo_method: :delete } %></p>
-      </div>
-    </button>
-  <% end %>
+          <div class="author-options hidden" data-toggle-target="elem">
+            <p><%= link_to "Edit Post", edit_post_path(post) %></p>
+            <%= button_to "Delete Post", post_path(post), method: :delete %>
+          </div>
+      <% end %>
+    </div>
   </div>
   
 

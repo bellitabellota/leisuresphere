@@ -56,7 +56,6 @@ a:hover, a:focus {
 }
 
 .post-author a {
-
 	font-size: 14px;
 	font-weight: 600;
 	transition: 0.15s;
@@ -67,17 +66,20 @@ a:hover, a:focus {
 	font-size: 12px;
 }
 
-.menu-button {
+.menu-button-container {
 	position: relative;
+}
+
+.menu-button {
 	background-color: white;
 	border:none;
 }
 
-.menu-button img:hover, .menu-button img:focus {
+.menu-button-container img:hover, .menu-button-container img:focus {
 	box-shadow: 1px 1px 4px rgba(116, 116, 116, 0.678);
 }
 
-.menu-button .author-options {
+.menu-button-container .author-options {
 	position: absolute;
 	top: 20px;
 	right: 0;
@@ -94,6 +96,19 @@ a:hover, a:focus {
 	pointer-events: none;
 }
 
-.menu-button .author-options a {
+.author-options a {
 	font-size: 14px;
 }
+
+.author-options button {
+	background-color:  rgb(231, 229, 229);
+	border: none;
+	padding: 0;
+	font-size: 14px;
+}
+
+.author-options button:hover {
+	text-decoration: underline;
+}
+
+
