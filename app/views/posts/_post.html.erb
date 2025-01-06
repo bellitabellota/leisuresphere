@@ -30,12 +30,18 @@
   
   <p class="post-body"><%= post.body %></p>
   
-  <p><%= post.likers.size %> Likes</p>
-  <% if post.likers.include?(current_user) %>
-    <%= link_to "Remove Like", like_path(post.likes.find_by(liker_id: current_user.id)), data: { turbo_method: :delete }%>
-  <% else %>
-    <%= link_to "Like", likes_path(likeable_id: post.id, likeable_type: "Post", liker_id: current_user.id), data: { turbo_method: :post } %>
-  <% end %>
+  <div class="like-container">
+    <p><%= post.likers.size %> </p>
+    <% if post.likers.include?(current_user) %>
+      <%= button_to like_path(post.likes.find_by(liker_id: current_user.id)), method: :delete do %>
+        <%= image_tag "icons/yellow-star.png", size: "14x14", alt: "star icon for post liked" %>
+      <% end %>
+    <% else %>
+      <%= button_to likes_path(likeable_id: post.id, likeable_type: "Post", liker_id: current_user.id), method: :post do %>
+        <%= image_tag "icons/transparent-star.png", size: "14x14", alt: "star icon to like post" %>
+      <% end %>
+    <% end %>
+  </div>
   
   <%= link_to "Add Comment", new_post_comment_path(post_id: post.id) %>
   <% if post.comments %>

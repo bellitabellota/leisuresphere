@@ -14,7 +14,12 @@ a:hover, a:focus {
 	text-decoration: underline;
 }
 
-/* Style for Feed */
+.hidden {
+	opacity:0;
+	pointer-events: none;
+}
+
+/* Styles for Feed */
 .feed-items{
 	display: flex;
 	flex-direction: column;
@@ -24,7 +29,7 @@ a:hover, a:focus {
 	width: clamp(500px, 33vw, 650px)
 }
 
-/* Style for post item */
+/* Styles for post item header */
 
 .feed-item {
 	background-color: white;
@@ -71,7 +76,7 @@ a:hover, a:focus {
 }
 
 .menu-button {
-	background-color: white;
+	background-color: transparent;
 	border:none;
 }
 
@@ -91,17 +96,12 @@ a:hover, a:focus {
 	box-shadow: 1px 1px 2px rgba(116, 116, 116, 0.808);
 }
 
-.hidden {
-	opacity:0;
-	pointer-events: none;
-}
-
 .author-options a {
 	font-size: 14px;
 }
 
 .author-options button {
-	background-color:  rgb(231, 229, 229);
+	background-color:  transparent			;
 	border: none;
 	padding: 0;
 	font-size: 14px;
@@ -111,4 +111,25 @@ a:hover, a:focus {
 	text-decoration: underline;
 }
 
+/* Styles for post likes */
 
+.like-container {
+	font-size: 14px;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+}
+
+.like-container button {
+	padding: 2px;
+	border-radius: 8px;
+	border: none;
+	background-color: transparent;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.like-container button:hover {
+	box-shadow: 1px 1px 4px rgba(116, 116, 116, 0.678);
+}
