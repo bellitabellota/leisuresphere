@@ -63,14 +63,14 @@ a:hover, a:focus {
 }
 
 .post-author a {
-	font-size: 14px;
+	font-size: 0.875rem;
 	font-weight: 600;
 	transition: 0.15s;
 }
 
 .post-date {
 	color: rgba(0, 0, 0, 0.733);
-	font-size: 12px;
+	font-size: 0.75rem;
 }
 
 .menu-button-container {
@@ -99,14 +99,14 @@ a:hover, a:focus {
 }
 
 .author-options a {
-	font-size: 14px;
+	font-size: 0.875rem;
 }
 
 .author-options button {
 	background-color:  transparent			;
 	border: none;
 	padding: 0;
-	font-size: 14px;
+	font-size: 0.875rem;
 }
 
 .author-options button:hover {
@@ -122,7 +122,7 @@ a:hover, a:focus {
 /* Styles for post likes */
 
 .like-container {
-	font-size: 14px;
+	font-size: 0.875rem;
 	display: flex;
 	justify-content: flex-end;
 	align-items: center;
@@ -139,13 +139,13 @@ a:hover, a:focus {
 }
 
 .like-container button:hover {
-	box-shadow: var(--hover-shadow);
+	box-shadow: var(--hover-shadow)
 }
 
 /* Styles for the post's comment section */
 
 .add-comment {
-	font-size: 14px;
+	font-size: 0.875rem;
 	display: block;
 	text-align: right;
 }
@@ -166,12 +166,12 @@ a:hover, a:focus {
 }
 
 .commenter {
-	font-size: 12px;
+	font-size: 0.75rem;
 	font-weight: 600;
 }
 
 .comment-body{
-	font-size: 14px;
+	font-size: 0.875rem;
 }
 
 .comment-actions {
@@ -189,7 +189,7 @@ a:hover, a:focus {
 
 .comment-actions a, .comment-actions button {
 	color: rgb(170, 168, 168);
-	font-size: 12px;
+	font-size: 0.75rem;
 	font-weight: 600;
 }
 
