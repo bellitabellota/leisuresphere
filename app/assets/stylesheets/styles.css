@@ -1,6 +1,8 @@
 /* Global styles */
 :root {
 	--hover-shadow: 1px 1px 4px rgba(116, 116, 116, 0.678);
+	--box-shadow-color: rgba(0, 0, 0, 0.178);
+	--box-shadow-color-dark: rgba(116, 116, 116, 0.808);
 }
 body {
 	background-color: rgba(189, 230, 189, 0.473);
@@ -22,7 +24,7 @@ a:hover, a:focus {
 }
 
 .profile-picture {
-	box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.178);
+	box-shadow: 1px 1px 2px var(--box-shadow-color);
 }
 
 /* Styles for Feed */
@@ -41,7 +43,7 @@ a:hover, a:focus {
 	background-color: white;
 	padding: 10px 15px;
 	border-radius: 10px;
-	box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.178);
+	box-shadow: 2px 2px 2px var(--box-shadow-color);
 }
 
 .post-header {
@@ -95,7 +97,7 @@ a:hover, a:focus {
 	white-space: nowrap;
 	padding: 5px 10px;
 	border-radius: 5px;
-	box-shadow: 1px 1px 2px rgba(116, 116, 116, 0.808);
+	box-shadow: 1px 1px 2px var(--box-shadow-color-dark);
 }
 
 .author-options a {
