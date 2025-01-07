@@ -42,15 +42,35 @@
       <% end %>
     <% end %>
   </div>
+
+  <hr>
   
-  <%= link_to "Add Comment", new_post_comment_path(post_id: post.id) %>
+  <%= link_to "Add Comment", new_post_comment_path(post_id: post.id), class: "add-comment" %>
   <% if post.comments %>
     <% post.comments.each do |comment| %>
-      <p><%= link_to "#{comment.commenter.name}", profile_path(comment.commenter.profile.id) %>: <%= comment.body %></p>
-      <% if comment.commenter == current_user %>
-      <%= link_to "Edit Comment", edit_post_comment_path(post, comment)%>
-      <%= link_to "Delete Comment", post_comment_path(post, comment), data: { turbo_method: :delete } %>
-      <% end %>
+      <div class="comment-container">
+        <% if comment.commenter.profile.profile_picture.attached? %>
+          <%= image_tag url_for(post.author.profile.profile_picture.variant(resize_to_fit: [35, 35]).processed), class: "profile-picture", alt: "" %>
+        <% else %>
+          <%= image_tag comment.commenter.profile.avatar_url, size: "35x35", class: "profile-picture", alt:"" %>
+        <% end %>
+
+        <div class="comment-content">
+
+          <div class="comment-information">
+            <p class="commenter"><%= link_to "#{comment.commenter.name}", profile_path(comment.commenter.profile.id) %></p>
+            <p class="comment-body"><%= comment.body %></p>
+          </div>
+          
+          <% if comment.commenter == current_user %>
+            <div class="comment-actions">
+              <%= link_to "Edit", edit_post_comment_path(post, comment)%>
+              <%= button_to "Delete", post_comment_path(post, comment), method: :delete %>
+            </div>
+          <% end %>
+
+        </div>
+      </div>
     <% end %>
   <% end %>
 </div>

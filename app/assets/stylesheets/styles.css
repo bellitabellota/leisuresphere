@@ -19,6 +19,10 @@ a:hover, a:focus {
 	pointer-events: none;
 }
 
+.profile-picture {
+	box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.178);
+}
+
 /* Styles for Feed */
 .feed-items{
 	display: flex;
@@ -49,10 +53,6 @@ a:hover, a:focus {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-around;
-}
-
-.post-header .profile-picture {
-	box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.178);
 }
 
 .post-header .profile-picture, .post-header .menu-button img {
@@ -109,6 +109,12 @@ a:hover, a:focus {
 
 .author-options button:hover {
 	text-decoration: underline;
+} 
+
+/* Styles for post body */
+
+.post-body {
+	padding-top: 15px;
 }
 
 /* Styles for post likes */
@@ -132,4 +138,65 @@ a:hover, a:focus {
 
 .like-container button:hover {
 	box-shadow: 1px 1px 4px rgba(116, 116, 116, 0.678);
+}
+
+/* Styles for the post's comment section */
+
+.add-comment {
+	font-size: 14px;
+	display: block;
+	text-align: right;
+}
+
+.comment-container {
+	display: flex;
+	gap: 5px;
+}
+
+.comment-container .profile-picture {
+	border-radius: 18px;
+}
+
+.comment-information {
+	background-color: rgba(218, 218, 218, 0.541);
+	border-radius: 15px;
+	padding: 5px 10px;
+}
+
+.commenter {
+	font-size: 12px;
+	font-weight: 600;
+}
+
+.comment-body{
+	font-size: 14px;
+}
+
+.comment-actions {
+	display:flex;
+	align-items: center;
+	justify-content: flex-start;
+	gap: 10px;
+	padding-left: 10px;
+}
+
+.button_to {
+	display: flex;
+	align-items: center;
+}
+
+.comment-actions a, .comment-actions button {
+	color: rgb(170, 168, 168);
+	font-size: 12px;
+	font-weight: 600;
+}
+
+.comment-actions button {
+	border: none;
+	background: transparent;
+	padding: 0;
+}
+
+.comment-actions button:hover {
+	text-decoration: underline;
 }
