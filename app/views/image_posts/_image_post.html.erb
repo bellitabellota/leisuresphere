@@ -1,29 +1,72 @@
-  <h3><%= link_to "#{image_post.author.name}", profile_path(image_post.author.profile.id) %></h3>
-  <p><%= image_post.created_at.strftime("%d %B %Y") %></p>
+<div class="post">
 
-  <% if image_post.author == current_user %>
-    <div class="author-options">
-      <%= link_to "Change Image", edit_image_post_path(image_post) %>
-      <%= link_to "Delete Image", image_post_path(image_post), data: { turbo_method: :delete } %>
+  <div class="post-header">
+    <% if image_post.author.profile.profile_picture.attached? %>
+      <%= image_tag url_for(image_post.author.profile.profile_picture.variant(resize_to_fit: [40, 40]).processed), class: "profile-picture", alt: "" %>
+    <% else %>
+      <%= image_tag image_post.author.profile.avatar_url, size: "40x40", class: "profile-picture", alt:"" %>
+    <% end %>
+
+    <div class="post-meta-data">
+      <p class="post-author"><%= link_to "#{image_post.author.name}", profile_path(image_post.author.profile.id) %></p>
+      <p class="post-date"><%= image_post.created_at.strftime("%d %B %Y") %></p>
     </div>
-  <% end %>
 
-  <%= image_tag url_for(image_post.body.variant(resize_to_fit: [100, 100]).processed) %>
+    <div class="menu-button-container" data-controller="toggle" data-toggle-change-class="hidden">
+      <% if image_post.author == current_user %>
+        <button class ="menu-button" data-action="click->toggle#toggle">
+          <%= image_tag "icons/vecteezy_three-dots-or-more-icon_15197822.jpg", size: "30x30", class:"menu", alt:"menu" %>
+        </button>
 
-  <p><%= image_post.likers.size %> Likes</p>
-  <% if image_post.likers.include?(current_user) %>
-    <%= link_to "Remove Like", like_path(image_post.likes.find_by(liker_id: current_user.id)), data: { turbo_method: :delete }%>
-  <% else %>
-    <%= link_to "Like", likes_path(likeable_id: image_post.id, likeable_type: "ImagePost", liker_id: current_user.id), data: { turbo_method: :post } %>
-  <% end %>
+        <div class="author-options hidden" data-toggle-target="elem">
+          <p><%= link_to "Change Image", edit_image_post_path(image_post) %></p>
+          <%= button_to "Delete Image", image_post_path(image_post), method: :delete %>
+        </div>
+      <% end %>
+    </div>
+  </div>
 
-  <%= link_to "Add Comment", new_image_post_comment_path(image_post) %>
-  <% if image_post.comments %>
-    <% image_post.comments.each do |comment| %>
-      <p><%= link_to "#{comment.commenter.name}", profile_path(comment.commenter.profile.id) %>: <%= comment.body %></p>
-      <% if comment.commenter == current_user %>
-      <%= link_to "Edit Comment", edit_image_post_comment_path(image_post, comment)%>
-      <%= link_to "Delete Comment", image_post_comment_path(image_post, comment), data: { turbo_method: :delete } %>
+  <%= image_tag url_for(image_post.body), class: "post-body" %>
+
+  <div class="like-container">
+    <p><%= image_post.likers.size %> </p>
+    <% if image_post.likers.include?(current_user) %>
+      <%= button_to like_path(image_post.likes.find_by(liker_id: current_user.id)), method: :delete do %>
+        <%= image_tag "icons/yellow-star.png", size: "14x14", alt: "star icon for post liked" %>
+      <% end %>
+    <% else %>
+      <%= button_to likes_path(likeable_id: image_post.id, likeable_type: "ImagePost", liker_id: current_user.id), method: :post do %>
+        <%= image_tag "icons/transparent-star.png", size: "14x14", alt: "star icon to like post" %>
       <% end %>
     <% end %>
+  </div>
+
+<hr>
+  
+  <%= link_to "Add Comment", new_image_post_comment_path(image_post_id: image_post.id), class: "add-comment" %>
+  <% if image_post.comments %>
+    <% image_post.comments.each do |comment| %>
+      <div class="comment-container">
+        <% if comment.commenter.profile.profile_picture.attached? %>
+          <%= image_tag url_for(image_post.author.profile.profile_picture.variant(resize_to_fit: [35, 35]).processed), class: "profile-picture", alt: "" %>
+        <% else %>
+          <%= image_tag comment.commenter.profile.avatar_url, size: "35x35", class: "profile-picture", alt:"" %>
+        <% end %>
+
+        <div class="comment-content">
+          <div class="comment-information">
+            <p class="commenter"><%= link_to "#{comment.commenter.name}", profile_path(comment.commenter.profile.id) %></p>
+            <p class="comment-body"><%= comment.body %></p>
+          </div>
+          
+          <% if comment.commenter == current_user %>
+            <div class="comment-actions">
+              <%= link_to "Edit", edit_image_post_comment_path(image_post, comment)%>
+              <%= button_to "Delete", image_post_comment_path(image_post, comment), method: :delete %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
   <% end %>
+</div>
