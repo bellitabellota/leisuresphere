@@ -4,6 +4,7 @@
 	--box-shadow-color: rgba(0, 0, 0, 0.178);
 	--box-shadow-color-dark: rgba(116, 116, 116, 0.808);
 }
+
 body {
 	background-color: rgba(189, 230, 189, 0.473);
   font-family: "Inter var", sans-serif;
@@ -119,6 +120,7 @@ a:hover, a:focus {
 
 .post-body {
 	padding-top: 15px;
+	white-space: pre-wrap;
 }
 
 /* Styles for post likes */
@@ -174,6 +176,7 @@ a:hover, a:focus {
 
 .comment-body{
 	font-size: 0.875rem;
+	white-space: pre-wrap;
 }
 
 .comment-actions {
