@@ -1,5 +1,7 @@
 /* Global styles */
-
+:root {
+	--hover-shadow: 1px 1px 4px rgba(116, 116, 116, 0.678);
+}
 body {
 	background-color: rgba(189, 230, 189, 0.473);
   font-family: "Inter var", sans-serif;
@@ -81,7 +83,7 @@ a:hover, a:focus {
 }
 
 .menu-button-container img:hover, .menu-button-container img:focus {
-	box-shadow: 1px 1px 4px rgba(116, 116, 116, 0.678);
+	box-shadow: var(--hover-shadow);
 }
 
 .menu-button-container .author-options {
@@ -137,7 +139,7 @@ a:hover, a:focus {
 }
 
 .like-container button:hover {
-	box-shadow: 1px 1px 4px rgba(116, 116, 116, 0.678);
+	box-shadow: var(--hover-shadow);
 }
 
 /* Styles for the post's comment section */
