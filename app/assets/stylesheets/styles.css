@@ -38,9 +38,9 @@ a:hover, a:focus {
 	width: clamp(500px, 33vw, 650px)
 }
 
-/* Styles for post item header */
+/* Styles for post header */
 
-.feed-item {
+.post {
 	background-color: white;
 	padding: 10px 15px;
 	border-radius: 10px;
@@ -157,6 +157,7 @@ a:hover, a:focus {
 .comment-container {
 	display: flex;
 	gap: 5px;
+	padding-top: 5px;
 }
 
 .comment-container .profile-picture {
