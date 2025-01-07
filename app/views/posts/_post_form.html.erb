@@ -11,6 +11,6 @@
 <% end %>
 
 <%= form_with model:post do |form| %>
-  <%= form.text_field :body %>
+  <%= form.text_area :body, size: "80x20" %>
   <%= form.submit %>
 <% end %>
