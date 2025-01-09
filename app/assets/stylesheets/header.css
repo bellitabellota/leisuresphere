@@ -1,0 +1,68 @@
+header {
+	display: grid;
+	grid-template-columns: 1fr 2fr 1fr;
+	background: white;
+	padding: 10px 20px;
+	align-items: center;
+}
+
+nav {
+	display: flex;
+	justify-content: center;
+	gap: 15%;
+}
+
+header div:last-child {
+	height: 100%;
+}
+
+header .button_to {
+	justify-self: end;
+	height: 100%;
+}
+
+header .button_to button {
+	border: none;
+	background-color: transparent;
+	height: 100%;
+}
+
+nav a, header .button_to button  {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 5px;
+	border: 3px solid transparent;
+	width: 65px;
+	padding-top: 3px;
+	padding-bottom: 3px;
+	border-radius: 10px;
+	transition: 0.15s;
+}
+
+nav a:hover, header .button_to button:hover, 
+nav a:focus, header .button_to button:focus {
+	background-color: rgba(189, 230, 189, 0.473);
+	border: 3px solid rgba(125, 162, 144, 1);
+} 
+
+nav a p, header .button_to button p {
+	line-height: 1;
+	font-size: 0.875rem;
+}
+
+header .button_to button:hover, 
+header .button_to button:focus {
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+nav a:last-child img {
+	border: 2px solid black;
+	border-radius: 15px;
+	width: 30px;
+	height: 30px;
+}
+
+

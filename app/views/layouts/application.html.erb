@@ -18,20 +18,47 @@
   </head>
 
   <body>
-    <!--Below the code will display the flash messages-->
     <% flash.each do |name, message | %>
       <div class="<%= name %>"><%= message %></div>
     <% end %>
 
-    <header>
-      <% if current_user %>
-        <%= link_to "Sign out", destroy_user_session_path, data: { turbo_method: :delete } %>
-        <%= link_to "Home", root_path %>
-        <%= link_to "Follow", users_path %>
-        <%= link_to "Following", follows_path %>
-        <%= link_to "My Profile", profile_path(current_user.profile.id) %>
-      <% end %>
-    </header>
+    <% if current_user %>
+      <header>
+        <div><%= image_tag  "logos/horizontal_logo_with_ lettering_leisursphere.png", width: "250", class: "header-logo" %></div>
+        <nav>
+          <%= link_to root_path do %>
+            <%= image_tag "icons/home.png", alt: "Sign out", size: "30x30" %>
+            <p>Home</p>
+          <% end %>
+
+          <%= link_to users_path do %>
+            <%= image_tag "icons/follow_icon.svg", alt: "Sign out", size: "30x30" %>
+            <p>Follow</p>
+          <% end %>
+
+          <%= link_to follows_path do %>
+            <%= image_tag "icons/followees_icon.svg", alt: "Sign out", size: "30x30" %>
+            <p>Following</p>
+          <% end %>
+
+          <%= link_to profile_path(current_user.profile.id) do %>
+            <% if current_user.profile.profile_picture.attached? %>
+              <%= image_tag url_for(current_user.profile.profile_picture.variant(resize_to_fit: [30, 30]).processed) %>
+            <% else %>
+              <%= image_tag current_user.profile.avatar_url, size: "30x30", alt: "profile-picture"%>
+            <% end %>
+            <p>My Profile</p>
+          <% end %>
+        </nav>
+        <div>
+          <%= button_to destroy_user_session_path, method: :delete do %>
+            <%= image_tag "icons/logout.png", alt: "Sign out", size: "25x25" %>
+            <p>Log out</p>
+          <% end %>
+        </div>
+      </header>
+    <% end %>
+
     <%= yield %>
   </body>
 </html>
