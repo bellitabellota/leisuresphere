@@ -1,0 +1,29 @@
+.success, .alert, .error, .notice {
+	position: absolute;
+	top: 12vh;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.success {
+	background-color: rgb(126, 233, 126);
+	border: 2px solid rgb(56, 146, 56);
+	border-radius: 5px;
+	padding: 3px 5px;
+}
+
+.error, .alert {
+	background-color: rgb(238, 104, 104);
+	border: 2px solid red;
+	border-radius: 5px;
+	padding: 5px 10px;
+}
+
+.notice {
+	background-color: rgb(128, 128, 214);
+	border: 2px solid rgb(67, 67, 131);
+	border-radius: 5px;
+	padding: 5px 10px;
+}
