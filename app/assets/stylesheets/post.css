@@ -20,7 +20,9 @@
 	justify-content: space-around;
 }
 
-.post-header .profile-picture, .post-header .menu-button img {
+.post-header 
+.profile-picture, 
+.post-header .menu-button img {
 	width: fit-content;
 	border-radius: 20px;
 }
@@ -45,8 +47,11 @@
 	border:none;
 }
 
-.menu-button-container img:hover, .menu-button-container img:focus {
+.menu-button-container img:hover, 
+.menu-button-container img:focus {
 	box-shadow: var(--hover-shadow);
+	cursor: pointer;
+	transition: box-shadow 0.15s;
 }
 
 .menu-button-container .author-options {
@@ -66,10 +71,11 @@
 }
 
 .author-options button {
-	background-color:  transparent			;
+	background-color: transparent;
 	border: none;
 	padding: 0;
 	font-size: 0.875rem;
+	cursor: pointer;
 }
 
 .author-options button:hover {
@@ -103,7 +109,9 @@
 }
 
 .like-container button:hover {
-	box-shadow: var(--hover-shadow)
+	box-shadow: var(--hover-shadow);
+	cursor: pointer;
+	transition: box-shadow 0.15s;
 }
 
 /* Styles for the post's comment section */
@@ -167,4 +175,5 @@
 
 .comment-actions button:hover {
 	text-decoration: underline;
+	cursor: pointer;
 }
