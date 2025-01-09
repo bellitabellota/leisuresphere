@@ -5,11 +5,20 @@
 	--box-shadow-color-dark: rgba(116, 116, 116, 0.808);
 }
 
+* {
+	box-sizing: border-box;
+}
+
 body {
 	background-color: rgba(189, 230, 189, 0.473);
-  font-family: "Inter var", sans-serif;
+  font-family: "Inter var", sans-serif; 
 	margin: 0;
-	box-sizing: border-box;
+}
+
+h1 {
+	font-family: "Pacifico", serif;
+	font-size: 2.25rem;
+	color:rgba(0, 0, 0, 0.863);
 }
 
 a {
@@ -28,14 +37,4 @@ a:hover, a:focus {
 
 .profile-picture {
 	box-shadow: 1px 1px 2px var(--box-shadow-color);
-}
-
-/* Styles for Feed */
-.feed-items{
-	display: flex;
-	flex-direction: column;
-	gap: 10px;
-	margin-left: auto;
-	margin-right: auto;
-	width: clamp(500px, 33vw, 650px)
 }

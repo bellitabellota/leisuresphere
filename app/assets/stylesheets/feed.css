@@ -1,0 +1,63 @@
+/* Styles for Feed */
+.feed-show-page {
+	display: grid;
+	grid-template-columns: 0.8fr 2fr 0.8fr;
+	justify-items: center;
+}
+
+.feed-show-page > * {
+	min-width: 400px;
+	max-width: 650px;
+}
+
+.heading-container {
+	width: 100%;
+	grid-area: 1 / 2 / 2 / 3;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 30px 15px 10px 15px;
+}
+
+.heading-container img {
+	padding: 3px;
+	border-radius: 13px;
+	transition: box-shadow 0.15s
+}
+
+.heading-container img:hover {
+	box-shadow: var(--hover-shadow);
+}
+
+.new-post {
+	position: relative;
+}
+
+.new-post-links {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	font-size: 0.875rem;
+	white-space: nowrap;
+	background-color: rgb(231, 229, 229);
+	padding: 5px 10px;
+	border-radius: 5px;
+	box-shadow: 1px 1px 2px var(--box-shadow-color-dark);
+	opacity: 0;
+	transition: opacity 0.15s;
+	pointer-events: none; 
+}
+
+.new-post:hover .new-post-links{
+	opacity: 1;
+	pointer-events: auto;
+	cursor: pointer; 
+}
+
+.feed-items {
+	justify-self: center;
+	display: grid;
+	row-gap: 10px;
+	grid-column-start: 2;
+	grid-column-end: 3;
+}

@@ -1,9 +1,16 @@
-<main>
-  <h1>LeisureSphere</h1>
-  <p>The social media platform to share all the little things you are passionate about!</p>
-  
-  <%= link_to "Write A Post", new_post_path %>
-  <%= link_to "Post An Image", new_image_post_path %>
+<main class="feed-show-page">
+  <div class="heading-container">
+    <h1>Feed</h1>
+
+    <div class="new-post">
+      <%= image_tag "icons/plus-cross-svgrepo-com.svg", size: "25x25" %>
+      
+      <div class="new-post-links">
+        <p><%= link_to "Write A Post", new_post_path %></p>
+        <p><%= link_to "Post An Image", new_image_post_path %></p>
+      </div>
+    </div>
+  </div>
   
   <div class="feed-items">
     <% if @feed_items.any? %>
