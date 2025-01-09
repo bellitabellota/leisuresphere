@@ -8,6 +8,8 @@
 body {
 	background-color: rgba(189, 230, 189, 0.473);
   font-family: "Inter var", sans-serif;
+	margin: 0;
+	box-sizing: border-box;
 }
 
 a {
