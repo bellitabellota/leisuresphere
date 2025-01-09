@@ -9,9 +9,11 @@ RSpec.describe "Remove Like from a post", type: :system do
 
       login_as user
       visit root_path
-      expect(page).to have_content("1 Likes")
-      click_on "Remove Like"
-      expect(page).to have_content("0 Likes")
+      within(".like-container") do
+        expect(page).to have_content("1")
+        find('form.button_to').find('button[type="submit"]').click
+        expect(page).to have_content("0")
+      end
     end
   end
 
@@ -23,9 +25,11 @@ RSpec.describe "Remove Like from a post", type: :system do
 
       login_as user
       visit root_path
-      expect(page).to have_content("1 Likes")
-      click_on "Remove Like"
-      expect(page).to have_content("0 Likes")
+      within(".like-container") do
+        expect(page).to have_content("1")
+        find('form.button_to').find('button[type="submit"]').click
+        expect(page).to have_content("0")
+      end
     end
   end
 end

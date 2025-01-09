@@ -9,7 +9,7 @@ RSpec.describe "Update a comment using button on Feed page", type: :system do
 
       login_as(user)
       visit root_path
-      click_on "Edit Comment"
+      click_on "Edit"
       fill_in "comment_body", with: "This is an updated comment."
       click_on "Update Comment"
       expect(page).to have_content("This is an updated comment.")
@@ -24,7 +24,7 @@ RSpec.describe "Update a comment using button on Feed page", type: :system do
 
       login_as(user)
       visit root_path
-      click_on "Edit Comment"
+      click_on "Edit"
       fill_in "comment_body", with: ""
       click_on "Update Comment"
       expect(page).to have_content("Body can't be blank")
@@ -39,7 +39,7 @@ RSpec.describe "Update a comment using button on Feed page", type: :system do
 
       login_as(user)
       visit root_path
-      click_on "Edit Comment"
+      click_on "Edit"
       fill_in "comment_body", with: "This is an updated comment."
       click_on "Update Comment"
       expect(page).to have_content("This is an updated comment.")
@@ -54,7 +54,7 @@ RSpec.describe "Update a comment using button on Feed page", type: :system do
 
       login_as(user)
       visit root_path
-      click_on "Edit Comment"
+      click_on "Edit"
       fill_in "comment_body", with: ""
       click_on "Update Comment"
       expect(page).to have_content("Body can't be blank")

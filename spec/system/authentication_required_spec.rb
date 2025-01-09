@@ -15,7 +15,7 @@ RSpec.describe "Request authentication to visit site", type: :system do
       login_as user
       visit root_path
 
-      expect(page).to have_content "The social media platform to share all the little things you are passionate about!"
+      expect(page).to have_content "Feed"
     end
   end
 end

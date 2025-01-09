@@ -9,7 +9,7 @@ RSpec.describe "Delete a comment using button on Feed page", type: :system do
 
       login_as(user)
       visit root_path
-      click_on "Delete Comment"
+      click_on "Delete"
       expect(page).not_to have_content("A comment waiting for deletion.")
     end
   end
@@ -22,7 +22,7 @@ RSpec.describe "Delete a comment using button on Feed page", type: :system do
 
       login_as(user)
       visit root_path
-      click_on "Delete Comment"
+      click_on "Delete"
       expect(page).not_to have_content("A comment waiting for deletion.")
     end
   end

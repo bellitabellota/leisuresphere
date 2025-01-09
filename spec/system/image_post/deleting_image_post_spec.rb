@@ -8,7 +8,7 @@ RSpec.describe "Delete an image_post", type: :system do
     visit root_path
 
     expect(page).to have_css("img[src*='test_image_post_sunset.jpg']")
-
+    find("img.menu").click
     click_on "Delete Image"
     expect(page).not_to have_css("img[src*='test_image_post_sunset.jpg']")
   end
