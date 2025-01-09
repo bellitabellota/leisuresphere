@@ -38,7 +38,8 @@ nav a, header .button_to button  {
 	padding-top: 3px;
 	padding-bottom: 3px;
 	border-radius: 10px;
-	transition: 0.15s;
+	transition: background-color 0.15s;
+	transition: border 0.15s;
 }
 
 nav a:hover, header .button_to button:hover, 
