@@ -1,7 +1,9 @@
 class ProfilesController < ApplicationController
   def show
     @profile = Profile.includes(:user).find(params[:id])
-    @posts = @profile.user.posts.includes(:likers, { comments: { commenter: :profile } }).order(created_at: :desc)
+    @text_posts = @profile.user.posts.includes(:likers, { comments: { commenter: :profile } })
+    @image_posts = @profile.user.image_posts.includes(:likers, { comments: { commenter: :profile } })
+    @feed_items = (@text_posts + @image_posts).sort_by { |item| item.created_at }.reverse
   end
 
   def edit

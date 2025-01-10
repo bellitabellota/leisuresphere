@@ -1,46 +1,48 @@
-<h1>Profile Information</h1>
-<% if @profile.profile_picture.attached? %>
-  <%= image_tag url_for(@profile.profile_picture.variant(resize_to_fit: [100, 100]).processed) %>
-<% else %>
-  <%= image_tag @profile.avatar_url, size: "100x100", alt: "profile-picture"%>
-<% end %>
+<main class="profile-page">
 
+  <h1>Profile Information</h1>
+  <div class="profile-card">
+    <div class="profile-information-container">
+      <% if @profile.profile_picture.attached? %>
+        <%= image_tag url_for(@profile.profile_picture.variant(resize_to_fit: [200, 200]).processed) %>
+      <% else %>
+        <%= image_tag @profile.avatar_url, size: "200x200", alt: "profile-picture"%>
+      <% end %>
+  
+      <div class="profile-details stack">
+        <p><b>Username:</b> <%= @profile.user.name %></p>
+        <p><b>Birthday:</b> <%= @profile.birthday || "—" %></p>
+        <p><b>Place of Residence:</b> <%= @profile.location || "—" %></p>
+        <p><b>Interests: </b><%= @profile.interests || "—" %></p>
+      </div>
+    </div>
 
-<p>Username: <%= @profile.user.name %></p>
-<p>Birthday: <%= @profile.birthday || "—" %></p>
-<p>Place of Residence: <%= @profile.location || "—" %></p>
-<p>Interests: <%= @profile.interests || "—" %></p>
+    <div class="profile-buttons">
+      <% if current_user == @profile.user %>
+        <%= link_to "Edit Profile", edit_profile_path(@profile) %>
+        <%= link_to "Delete Account", user_path(current_user), data: { turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+      <% end %>
+    </div>
+  </div>
 
-<% if current_user == @profile.user %>
-	<%= link_to "Edit Profile", edit_profile_path(@profile) %>
-	<%= link_to "Delete Account", user_path(current_user), data: { turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
-<% end %>
-
-<% if @posts.any? %>
-	<p><%= @profile.user.name %>'s posts:</p>
-	<% @posts.each do |post| %>
-		<div class=current_users_posts>
-			<p class="post-date"><%= post.created_at.strftime("%d %B %Y") %></p>
-        <% if @profile.user == current_user %>
-          <div class="author-options">
-            <%= link_to "Edit Post", edit_post_path(post) %>
-            <%= link_to "Delete Post", post_path(post), data: { turbo_method: :delete } %>
-          </div>
-        <% end %>
-        
-        <p class="post-body"><%= post.body %></p>
-				<p><%= post.likers.size %> Likes</p>
-				<% if post.comments %>
-          <% post.comments.each do |comment| %>
-            <p><%= link_to "#{comment.commenter.name}", profile_path(comment.commenter.profile.id) %>: <%= comment.body %></p>
-            <% if comment.commenter == current_user %>
-            <%= link_to "Edit Comment", edit_post_comment_path(post, comment)%>
-            <%= link_to "Delete Comment", post_comment_path(post, comment), data: { "turbo-method": :delete } %>
-            <% end %>
+  <div class="profile-feed">
+    <h2>My Posts</h2>
+    <div class="profile-feed-items">
+      <% if @feed_items.any? %>
+        <% @feed_items.each do |item| %>
+          <% if item.class == Post %>
+            <div>
+              <%= render "posts/post", post: item %>
+            </div>
+          <% elsif item.class == ImagePost %>
+            <div>
+              <%= render "image_posts/image_post", image_post: item %>
+            </div>
           <% end %>
         <% end %>
-		</div>
-	<% end %>
-<% else %>
-	<p>You have not written any posts yet.</p>
-<% end %>
+      <% else %>
+        <p>You have not posted anything yet.</p>
+      <% end %>
+    </div>
+  </div>
+</main>

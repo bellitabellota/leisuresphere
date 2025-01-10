@@ -1,0 +1,92 @@
+.profile-page {
+	display: flex;
+	flex-direction: column;
+}
+
+.profile-page h1 {
+	text-align: center;
+	padding-top: 35px;
+	padding-bottom: 15px;
+}
+
+.profile-card {
+	width: 55%;
+	min-width: 500px;
+	max-width: 800px;
+	margin-left: auto;
+	margin-right: auto;
+	border: 5px solid rgba(125, 162, 144, 1);
+	border-radius: 25px;
+	background-color: white;
+}
+.profile-information-container {
+	font-size: 1.25rem;
+	padding: 20px 20px;
+	margin-left: auto;
+	margin-right: auto;
+	display:flex;
+	justify-content: center;
+	gap:5%;
+}
+
+.profile-information-container img {
+	border-radius: 100px;
+}
+
+.profile-information-container > div {
+	align-self: center;
+}
+
+.profile-buttons {
+	padding-top: 10px;
+	padding-bottom: 20px;
+	display:flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.profile-buttons button, 
+.profile-buttons a {
+	border: 2px solid rgba(125, 162, 144, 1);
+	background-color: rgba(189, 230, 189, 0.473);
+	border-radius: 5px;
+	padding: 5px 10px;
+	transition: background-color 0.15s;
+	cursor: pointer;
+}
+
+.profile-buttons button:hover, 
+.profile-buttons a:hover,
+.profile-buttons button:focus, 
+.profile-buttons a:focus {
+	background-color: rgba(125, 162, 144, 1);
+	text-decoration: none;
+}
+
+.profile-feed {
+	display: grid;
+	grid-template-columns: 0.8fr 2fr 0.8fr;
+	justify-items: center;
+}
+
+.profile-feed > * {
+    min-width: 400px;
+	max-width: 650px;
+}
+
+.profile-feed h2 {
+	width: 100%;
+	grid-area: 1 / 2 / 2 / 3;
+	padding: 35px 15px 10px 15px;
+}
+
+.profile-feed-items {
+	justify-self: center;
+	display: grid;
+	row-gap: 10px;
+	grid-column-start: 2;
+	grid-column-end: 3;
+}
+
+
+
