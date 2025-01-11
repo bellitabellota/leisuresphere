@@ -1,0 +1,24 @@
+<main class="devise password-new">
+  <div class="flex-container">
+    <%=image_tag "logos/vertical_logo_with_lettering_and_slogan_leisuresphere_1250x1250.png", size: "350x350", alt: "" %>
+
+    <div class="form-container">
+      <h2>Forgot your <br> password?</h2>
+      
+      <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+        <%= render "devise/shared/error_messages", resource: resource %>
+      
+        <div class="field">
+          <%= f.label :email %><br />
+          <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+        </div>
+      
+        <div class="actions">
+          <%= f.submit "Send reset instructions" %>
+        </div>
+      <% end %>
+      
+      <div class="stack"><%= render "devise/shared/links" %></div>
+    </div>
+  </div>
+</main>
