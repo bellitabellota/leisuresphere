@@ -1,26 +1,36 @@
-<h2>Log in</h2>
+<main class="devise">
+  <div class="flex-container">
+    <%=image_tag "logos/vertical_logo_with_lettering_and_slogan_leisuresphere_1250x1250.png", size: "350x350", alt: "" %>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <p><%= f.label :login %><br />
-    <%= f.text_field :login %></p>
-  </div>
 
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
-
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+    <div class="form-container">
+      <h2>Log in</h2>
+      
+      <%= form_for(resource, as: resource_name, class:"stack", url: session_path(resource_name)) do |f| %>
+        <div class="stack">
+          <div class="field">
+            <p><%= f.label :login %><br />
+            <%= f.text_field :login %></p>
+          </div>
+          <div class="field">
+            <%= f.label :password %><br />
+            <%= f.password_field :password, autocomplete: "current-password" %>
+          </div>
+        </div>
+      
+        <% if devise_mapping.rememberable? %>
+          <div class="field stack-small">
+            <%= f.check_box :remember_me %>
+            <%= f.label :remember_me %>
+          </div>
+        <% end %>
+      
+        <div class="actions">
+          <%= f.submit "Log in" %>
+        </div>
+      <% end %>
+      
+      <div class="stack"><%= render "users/shared/links" %></div>
     </div>
-  <% end %>
-
-  <div class="actions">
-    <%= f.submit "Log in" %>
   </div>
-<% end %>
-
-<%= render "users/shared/links" %>
+</main>

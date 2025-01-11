@@ -1,0 +1,54 @@
+.devise {
+	display: flex;
+	justify-content: center;
+	height:90vh;
+	align-items: center;
+}
+
+.flex-container {
+	display: flex;
+	border: 5px solid var(--secondary);
+	border-radius: 25px;
+	align-items: center;
+	justify-content: center;
+	background-color: white;
+	padding: 15px 20px;
+}
+
+.form-container {
+	padding: 10px 30px;
+}
+
+.devise .form-container h2 {
+	text-align: center;
+}
+
+.new_user {
+	padding-top: 0.5rem;
+}
+
+.devise .stack-small {
+	margin-bottom: 1rem;
+}
+
+.devise .stack a {
+	color: var(--tertiary)
+}
+
+.actions input {
+	display: block;
+	margin: 0.5rem  auto;
+
+	border: 2px solid var(--secondary);
+	background-color: var(--secondary-opaque);
+	border-radius: 5px;
+	padding: 5px 10px;
+	transition: background-color 0.15s;
+	cursor: pointer;
+}
+
+.actions input:hover,
+.actions input:focus {
+	background-color: var(--secondary);
+}
+
