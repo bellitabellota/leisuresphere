@@ -45,8 +45,8 @@ nav a, header .button_to button  {
 
 nav a:hover, header .button_to button:hover, 
 nav a:focus, header .button_to button:focus {
-	background-color: rgba(189, 230, 189, 0.473);
-	border: 3px solid rgba(125, 162, 144, 1);
+	background-color: var(--primary);
+	border: 3px solid var(--secondary);
 } 
 
 nav a p, header .button_to button p {

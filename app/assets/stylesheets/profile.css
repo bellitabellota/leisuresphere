@@ -15,7 +15,7 @@
 	max-width: 800px;
 	margin-left: auto;
 	margin-right: auto;
-	border: 5px solid rgba(125, 162, 144, 1);
+	border: 5px solid var(--secondary);
 	border-radius: 25px;
 	background-color: white;
 }
@@ -47,8 +47,8 @@
 
 .profile-buttons button, 
 .profile-buttons a {
-	border: 2px solid rgba(125, 162, 144, 1);
-	background-color: rgba(189, 230, 189, 0.473);
+	border: 2px solid var(--secondary);
+	background-color: var(--primary);
 	border-radius: 5px;
 	padding: 5px 10px;
 	transition: background-color 0.15s;
@@ -59,7 +59,7 @@
 .profile-buttons a:hover,
 .profile-buttons button:focus, 
 .profile-buttons a:focus {
-	background-color: rgba(125, 162, 144, 1);
+	background-color: var(--secondary);
 	text-decoration: none;
 }
 

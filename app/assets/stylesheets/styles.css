@@ -3,6 +3,9 @@
 	--hover-shadow: 1px 1px 4px rgba(116, 116, 116, 0.678);
 	--box-shadow-color: rgba(0, 0, 0, 0.178);
 	--box-shadow-color-dark: rgba(116, 116, 116, 0.808);
+	--primary: rgba(189, 230, 189, 0.473);
+	--secondary: rgba(125, 162, 144, 1);
+	--tertiary: rgb(90, 121, 106, 1);
 }
 
 * {

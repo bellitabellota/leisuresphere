@@ -7,9 +7,9 @@ footer {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	color: rgba(125, 162, 144, 1);
+	color: var(--secondary);
 	font-size: 0.875rem;
-	border-top: 2px solid rgb(90, 121, 106, 1);
+	border-top: 2px solid var(--tertiary);
 	margin-top: 10px;
 	padding: 5px 0;
 }
@@ -29,7 +29,7 @@ footer {
 	left: 50%;
 	transform: translate(-50%, -100%);
 	background-color: white;
-	border: 20px solid rgb(90, 121, 106, 1);
+	border: 20px solid var(--tertiary);
 	border-radius: 15px;
 	white-space: nowrap;
 	padding: 25px 30px;
