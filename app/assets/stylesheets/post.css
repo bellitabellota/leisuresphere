@@ -20,11 +20,22 @@
 	justify-content: space-around;
 }
 
-.post-header 
-.profile-picture, 
+.post-header .profile-picture, 
 .post-header .menu-button img {
 	width: fit-content;
 	border-radius: 20px;
+}
+
+.post-header .profile-picture {
+	width: 40px;
+	height: 40px;
+	object-fit: cover;
+}
+
+.profile-picture {
+	height: 30px;
+	width: 30px;
+	object-fit: cover;
 }
 
 .post-author a {
@@ -129,7 +140,10 @@
 }
 
 .comment-container .profile-picture {
+	width: 35px;
+	height: 35px;
 	border-radius: 18px;
+	object-fit: cover;
 }
 
 .comment-information {
