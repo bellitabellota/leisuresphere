@@ -13,5 +13,5 @@
 <%= form_with model: [ commentable, comment ] do |form| %>
   <%= form.text_area :body, size: "80x20" %>
   <%= form.hidden_field :commenter_id, value: current_user.id %>
-  <%= form.submit %>
+  <%= form.submit class:"submit" %>
 <% end %>

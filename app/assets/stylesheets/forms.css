@@ -17,7 +17,7 @@
 	margin-top: 1.5rem;
 }
 
-.form input {
+.submit {
 	color: rgb(70, 95, 83);
 	font-size: 1.125rem;
 	margin-top: 30px;
@@ -29,6 +29,6 @@
 	cursor: pointer;
 }
 
-.form input:hover {
+.submit:hover {
 	background-color: var(--secondary);
 }
