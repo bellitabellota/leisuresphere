@@ -58,7 +58,7 @@ a:hover, a:focus {
 	margin-top: 1.25rem;
 }
 
-.stack-small {
+.stack-small > * + * {
 	margin-top: 1rem;
 }
 
