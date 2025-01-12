@@ -1,4 +1,4 @@
-<main class="form">
+<main class="edit-profile">
 	<h1>Edit Profile</h1>
 	
 	<% if @profile.errors.any? %>
@@ -14,38 +14,53 @@
 	<% end %>
 	
 	<%= form_with model:@profile do |form| %>
-		<%= form.fields_for :user, current_user do |subform| %>
-			<%= subform.label :name %>
-			<%= subform.text_field :name %>
-		<% end %>
-	
-		<%= form.label :birthday, "Birthday:" %>
-		<%= form.date_field :birthday %>
-	
-		<%= form.label :location, "Place of Residence:" %>
-		<%= form.text_field :location%>
-	
-		<%= form.label :interests, "Interests:" %>
-		<%= form.text_area :interests %>
-		<hr>
-	
-		<% if @profile.profile_picture.attached? && @profile.profile_picture.representable? %>
-			<p>Current image:</p>
-			<%= image_tag @profile.profile_picture.variant(resize_to_fit: [100, 100]).processed %>
-				<%= link_to "Delete and revert to Gravatar, Google or default image",
-					delete_image_profile_url(image_id: @profile.profile_picture.id),
-					data: { turbo_method: :delete,
-					turbo_confirm: "Are you sure?" }
-				%>
+		<div class="form-group stack">
+			<%= form.fields_for :user, current_user do |subform| %>
+				<div class="form-field">
+					<%= subform.label :name %>
+					<%= subform.text_field :name %>
+				</div>
+			<% end %>
+			<div class="form-field">
+				<%= form.label :birthday, "Birthday" %>
+				<%= form.date_field :birthday %>
 			</div>
-		<% else %>
-					<p>Current profile picture: </p>
-					<%= image_tag @profile.avatar_url, size: "100x100" %>
-					<p>Upload a different one:</p>
-					<%= form.file_field :profile_picture %>
-		<% end %>
-		<hr>
-	
-		<%= form.submit %>
+			<div class="form-field">
+				<%= form.label :location, "Place of Residence" %>
+				<%= form.text_field :location %>
+			</div>
+			<hr>
+			<div class="form-field">
+				<%= form.label :interests, "Interests" %>
+				<%= form.text_area :interests, size: "30x5" %>
+			</div>
+			<hr>
+
+			<% if @profile.profile_picture.attached? && @profile.profile_picture.representable? %>
+				<div class="profile-picture-section">
+					<p>Current Profile Picture</p>
+					<%= image_tag @profile.profile_picture.variant(resize_to_fit: [100, 100]).processed %>
+					<%= link_to "Delete and revert to Gravatar, Google or default image",
+						delete_image_profile_url(image_id: @profile.profile_picture.id),
+						data: { turbo_method: :delete,
+						turbo_confirm: "Are you sure?" }
+					%>
+				</div>
+			<% else %>
+				<div class="profile-picture-section">
+					<div class="current-picture">
+						<p>Current Profile Picture </p>
+						<%= image_tag @profile.avatar_url, size: "100x100" %>
+					</div>
+					<div class="upload-picture">
+						<p>Upload A Different Picture</p>
+						<%= form.file_field :profile_picture %>
+					</div>
+				</div>
+			<% end %>
+
+			<hr>
+			<%= form.submit class:"submit" %>
+		</div>
 	<% end %>
 </main>

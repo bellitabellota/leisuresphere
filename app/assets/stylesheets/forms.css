@@ -1,3 +1,4 @@
+/* Post and Comment form styles */
 .form h1 {
 	text-align: center;
 	padding: 35px 15px 10px 15px;
@@ -31,4 +32,93 @@
 
 .submit:hover {
 	background-color: var(--secondary);
+}
+
+/* Edit#profile form styles*/
+
+.edit-profile h1 {
+	text-align: center;
+	padding: 35px 15px 10px 15px;
+}
+
+.form-group {
+	width: fit-content;
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: 1rem;
+}
+
+.form-field {
+	display: flex;
+	gap: 0.5rem;
+	justify-content: space-between;
+}
+
+.form-group .form-field:last-child {
+	display:flex;
+	flex-direction: column;
+}
+
+.form-group .form-field:last-child label {
+	text-align: center;
+}
+
+.form-field input,
+.form-field textarea {
+	border: 2px solid var(--secondary);
+	flex: 1;
+}
+
+.form-field input {
+	border-radius: 25px;
+	padding: 5px 15px;
+}
+
+.form-field textarea {
+	border-radius: 10px;
+	padding: 10px 15px;
+}
+
+.profile-picture-section {
+	background-color: white;
+	border: 2px solid var(--secondary);
+	border-radius: 10px;
+	padding: 10px 15px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 1.75rem;
+}
+
+.profile-picture-section img {
+	border-radius: 50px;
+}
+
+.profile-picture-section > * {
+	display:flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 1rem;
+}
+
+.form-group .submit {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.profile-picture-section a {
+	font-size: 0.875rem;
+	color: rgb(70, 95, 83);
+	background-color: var(--secondary-opaque);
+	border: 2px solid var(--secondary);
+	border-radius: 20px;
+	padding: 5px 15px;
+	transition: background-color 0.15s;
+}
+
+.profile-picture-section a:hover {
+	text-decoration: none;
+	background-color: var(--secondary);
+	cursor: pointer;
 }
