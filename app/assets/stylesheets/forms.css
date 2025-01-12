@@ -1,0 +1,34 @@
+.form h1 {
+	text-align: center;
+	padding: 35px 15px 10px 15px;
+}
+
+.form textarea,
+.form input {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.form textarea {
+	border: 4px solid var(--secondary);
+	border-radius: 5px;
+	padding: 10px 15px;
+	margin-top: 1.5rem;
+}
+
+.form input {
+	color: rgb(70, 95, 83);
+	font-size: 1.125rem;
+	margin-top: 30px;
+	border: 2px solid var(--secondary);
+	background-color: var(--secondary-opaque);
+	border-radius: 25px;
+	padding: 5px 15px;
+	transition: background-color 0.15s;
+	cursor: pointer;
+}
+
+.form input:hover {
+	background-color: var(--secondary);
+}
