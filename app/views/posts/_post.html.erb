@@ -49,7 +49,7 @@
     <% post.comments.each do |comment| %>
       <div class="comment-container">
         <% if comment.commenter.profile.profile_picture.attached? %>
-          <%= image_tag url_for(post.author.profile.profile_picture.variant(resize_to_fit: [35, 35]).processed), class: "profile-picture", alt: "" %>
+          <%= image_tag url_for(comment.commenter.profile.profile_picture.variant(resize_to_fit: [35, 35]).processed), class: "profile-picture", alt: "" %>
         <% else %>
           <%= image_tag comment.commenter.profile.avatar_url, size: "35x35", class: "profile-picture", alt:"" %>
         <% end %>
