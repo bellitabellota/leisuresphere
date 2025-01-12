@@ -34,6 +34,28 @@
 	background-color: var(--secondary);
 }
 
+/* Image post form styles */
+
+#image_post_body {
+	background-color: white;
+	margin-top: 1.5rem;
+	padding: 10px 20px;
+	border: 2px solid var(--secondary);
+	border-radius: 25px;
+}
+
+.current-image-post {
+	margin-left: auto;
+	margin-right: auto;
+	width: fit-content;
+	text-align: center;
+}
+
+.current-image-post p {
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
 /* Edit#profile form styles*/
 
 .edit-profile h1 {
