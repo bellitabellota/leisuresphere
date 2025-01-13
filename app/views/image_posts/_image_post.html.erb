@@ -43,7 +43,7 @@
 
 <hr>
   
-  <%= link_to "Add Comment", new_image_post_comment_path(image_post_id: image_post.id), class: "add-comment" %>
+  <%= link_to "Add Comment", new_image_post_comment_path(image_post_id: image_post.id, path: request.original_url), class: "add-comment" %>
   <% if image_post.comments %>
     <% image_post.comments.each do |comment| %>
       <div class="comment-container">
