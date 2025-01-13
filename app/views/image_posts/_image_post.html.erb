@@ -11,9 +11,8 @@
       <p class="post-author"><%= link_to "#{image_post.author.name}", profile_path(image_post.author.profile.id) %></p>
       <p class="post-date"><%= image_post.created_at.strftime("%d %B %Y") %></p>
     </div>
-
     <div class="menu-button-container" data-controller="toggle" data-toggle-change-class="hidden">
-      <% if image_post.author == current_user %>
+      <% if image_post.author == current_user && request.original_url == profile_url(current_user.profile.id) %>
         <button class ="menu-button" data-action="click->toggle#toggle">
           <%= image_tag "icons/vecteezy_three-dots-or-more-icon_15197822.jpg", size: "30x30", class:"menu", alt:"menu" %>
         </button>
