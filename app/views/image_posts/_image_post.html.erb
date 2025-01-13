@@ -62,7 +62,7 @@
           <% if comment.commenter == current_user %>
             <div class="comment-actions">
               <%= link_to "Edit", edit_image_post_comment_path(image_post, comment, path: request.original_url)%>
-              <%= button_to "Delete", image_post_comment_path(image_post, comment), method: :delete %>
+              <%= button_to "Delete", image_post_comment_path(image_post, comment, path: request.original_url), method: :delete, data: { turbo: false } %>
             </div>
           <% end %>
         </div>

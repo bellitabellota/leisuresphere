@@ -46,7 +46,9 @@ class CommentsController < ApplicationController
   def destroy
     @comment = Comment.find(params[:id])
     @comment.destroy
-    redirect_to root_path, status: :see_other
+    @path = params[:path]
+    @commentable = @comment.commentable
+    redirect_to "#{@path}##{@commentable.class}-#{@commentable.id}", status: :see_other
   end
 
   private

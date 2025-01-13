@@ -17,6 +17,6 @@ class LikesController < ApplicationController
     @likeable = @like.likeable
 
     @like.destroy
-    redirect_to "#{@path}##{@likeable.class}-#{@likeable.id}"
+    redirect_to "#{@path}##{@likeable.class}-#{@likeable.id}", status: :see_other
   end
 end
