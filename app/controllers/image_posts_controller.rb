@@ -33,7 +33,7 @@ class ImagePostsController < ApplicationController
     @image_post = ImagePost.find(params[:id])
 
     @image_post.destroy
-    redirect_to root_path, status: :see_other
+    redirect_to profile_path(current_user.profile.id), status: :see_other
   end
 
   private
