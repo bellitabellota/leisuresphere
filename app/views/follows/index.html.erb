@@ -1,6 +1,25 @@
+<main class="following-page">
+  <h1>Your Followees</h1>
+  <p>Below you can see all the people you are following and manage your connections.</p>
 
-<p>Below you can see all the people you are following and manage your connections.</p>
-<% @follows.each do |follow| %>
-  <div><%= follow.followee.name %></div>
-  <%= button_to "Unfollow", follow_path(follow), method: :delete, data: {turbo_confirm: "Are you sure?"} %>
-<% end %>
+
+  <div class="followees">
+    <% @follows.each do |follow| %>
+      <div class="followee">
+        <div>
+          <% if follow.followee.profile.profile_picture.attached? %>
+            <%= image_tag url_for(post.author.profile.profile_picture.variant(resize_to_fit: [40, 40]).processed), class: "profile-picture", alt: "" %>
+          <% else %>
+            <%= image_tag follow.followee.profile.avatar_url, size: "40x40", class: "profile-picture", alt:"" %>
+          <% end %>
+        </div>
+
+        <div class="followeename"><%= follow.followee.name %></div>
+        <%= button_to "Unfollow", follow_path(follow), method: :delete, data: { turbo_confirm: "Are you sure?" }, class:"unfollow-button" %>
+        
+      </div>
+
+    <% end %>
+    
+  </div>
+</main>

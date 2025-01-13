@@ -1,0 +1,56 @@
+.following-page h1 {
+	text-align: center;
+	padding-top: 35px;
+}
+
+.following-page > p {
+	text-align: center;
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+}
+
+.followees {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 0.875rem;
+}
+
+.followee {
+	background-color: white;
+	padding: 15px 20px;
+	border-radius: 15px;
+	box-shadow: 2px 2px 2px var(--box-shadow-color);
+
+	min-width: 400px;
+	max-width: 650px;
+	width: 75vw;
+
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1.25rem;
+}
+
+.followee .profile-picture {
+	border-radius: 20px;
+}
+
+.followees .followeename {
+	flex: 1;
+}
+
+.unfollow-button {
+	color: rgb(70, 95, 83);
+	border: 2px solid var(--secondary);
+	background-color: var(--secondary-opaque);
+	border-radius: 25px;
+	padding: 5px 15px;
+	transition: background-color 0.15s;
+	cursor: pointer;
+}
+
+.unfollow-button:hover,
+.unfollow-button:focus {
+	background-color: var(--secondary);
+}
