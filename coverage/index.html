@@ -13,7 +13,7 @@
       <img src="./assets/0.13.1/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2025-01-13T13:07:05+00:00">2025-01-13T13:07:05+00:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2025-01-13T13:22:42+00:00">2025-01-13T13:22:42+00:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -98,7 +98,7 @@
             <td class="cell--number">6</td>
             <td class="cell--number">6</td>
             <td class="cell--number">0</td>
-            <td class="cell--number">24.00</td>
+            <td class="cell--number">21.00</td>
             
           </tr>
         
@@ -153,7 +153,7 @@
             <td class="cell--number">27</td>
             <td class="cell--number">24</td>
             <td class="cell--number">3</td>
-            <td class="cell--number">2.41</td>
+            <td class="cell--number">3.07</td>
             
           </tr>
         
@@ -1640,9 +1640,9 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="29" data-linenumber="3">
+          <li class="covered" data-hits="25" data-linenumber="3">
             
-              <span class="hits">29</span>
+              <span class="hits">25</span>
             
 
             
@@ -1662,9 +1662,9 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="29" data-linenumber="5">
+          <li class="covered" data-hits="25" data-linenumber="5">
             
-              <span class="hits">29</span>
+              <span class="hits">25</span>
             
 
             
@@ -1694,9 +1694,9 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="29" data-linenumber="8">
+          <li class="covered" data-hits="25" data-linenumber="8">
             
-              <span class="hits">29</span>
+              <span class="hits">25</span>
             
 
             
@@ -1726,9 +1726,9 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="55" data-linenumber="11">
+          <li class="covered" data-hits="49" data-linenumber="11">
             
-              <span class="hits">55</span>
+              <span class="hits">49</span>
             
 
             
@@ -2471,7 +2471,7 @@
 
             
 
-            <code class="ruby">    redirect_to root_path, status: :see_other</code>
+            <code class="ruby">    redirect_to profile_path(current_user.profile.id), status: :see_other</code>
           </li>
         </div>
       
@@ -3235,7 +3235,7 @@
 
             
 
-            <code class="ruby">    redirect_to root_path, status: :see_other</code>
+            <code class="ruby">    redirect_to profile_path(current_user.profile.id), status: :see_other</code>
           </li>
         </div>
       
@@ -3381,9 +3381,9 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="6" data-linenumber="3">
+          <li class="covered" data-hits="10" data-linenumber="3">
             
-              <span class="hits">6</span>
+              <span class="hits">10</span>
             
 
             
@@ -3393,9 +3393,9 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="6" data-linenumber="4">
+          <li class="covered" data-hits="10" data-linenumber="4">
             
-              <span class="hits">6</span>
+              <span class="hits">10</span>
             
 
             
@@ -3405,9 +3405,9 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="6" data-linenumber="5">
+          <li class="covered" data-hits="10" data-linenumber="5">
             
-              <span class="hits">6</span>
+              <span class="hits">10</span>
             
 
             
@@ -3417,9 +3417,9 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="10" data-linenumber="6">
+          <li class="covered" data-hits="16" data-linenumber="6">
             
-              <span class="hits">10</span>
+              <span class="hits">16</span>
             
 
             
@@ -12213,7 +12213,7 @@
 
             
 
-            <code class="ruby">  it &quot;image_post is not displayed on Feed&quot; do</code>
+            <code class="ruby">  it &quot;image_post is not displayed on &#39;My Profile&#39;&quot; do</code>
           </li>
         </div>
       
@@ -12261,7 +12261,7 @@
 
             
 
-            <code class="ruby">    visit root_path</code>
+            <code class="ruby">    visit profile_path(user.profile.id)</code>
           </li>
         </div>
       
@@ -14116,7 +14116,7 @@
 
             
 
-            <code class="ruby">    visit root_path</code>
+            <code class="ruby">    visit profile_path(user.profile.id)</code>
           </li>
         </div>
       

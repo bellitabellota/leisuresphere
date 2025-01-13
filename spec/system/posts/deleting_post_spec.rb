@@ -5,7 +5,7 @@ RSpec.describe "Delete a post", type: :system do
     user = FactoryBot.create(:user)
     login_as(user)
     FactoryBot.create(:post, author_id: user.id, body: "This is an new post")
-    visit root_path
+    visit profile_path(user.profile.id)
     find("img.menu").click
     click_on "Delete Post"
     expect(page).not_to have_content("This is a new post")
