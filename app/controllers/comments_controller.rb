@@ -8,12 +8,12 @@ class CommentsController < ApplicationController
   def create
     @commentable = find_commentable
     @comment = @commentable.comments.build(comment_params)
-    @path = path_params
+    @path = path_params[:path]
 
     if @comment.save
-      if @path = profile_path(current_user.profile.id)
+      if @path == profile_url(current_user.profile.id)
         redirect_to profile_path(current_user.profile.id, anchor: "#{@commentable.class}-#{@commentable.id}")
-      elsif @path = root_path
+      elsif @path == root_url
         redirect_to root_path(anchor: "#{@commentable.class}-#{@commentable.id}")
       end
     else
@@ -30,12 +30,14 @@ class CommentsController < ApplicationController
   def update
     @commentable = find_commentable
     @comment = Comment.find(params[:id])
-    @path = path_params
+    @path = path_params[:path]
 
     if @comment.update(comment_params)
-      if @path = profile_path(current_user.profile.id)
-        redirect_to profile_path(current_user.profile.id, anchor: "#{@commentable.class}-#{@commentable.id}")
-      elsif @path = root_path
+      if @path == profile_url(current_user.profile.id)
+        p "if profile path"
+        redirect_to profile_url(current_user.profile.id, anchor: "#{@commentable.class}-#{@commentable.id}")
+      elsif @path == root_url
+        p "elsif root path"
         redirect_to root_path(anchor: "#{@commentable.class}-#{@commentable.id}")
       end
     else
