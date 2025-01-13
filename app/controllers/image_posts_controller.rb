@@ -22,7 +22,7 @@ class ImagePostsController < ApplicationController
     @image_post = ImagePost.find(params[:id])
 
     if @image_post.update(image_post_params)
-      redirect_to root_path
+      redirect_to profile_path(current_user.profile.id)
     else
       @image_post.body = nil
       render :edit, status: :unprocessable_entity
