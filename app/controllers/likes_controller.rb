@@ -1,18 +1,22 @@
 class LikesController < ApplicationController
   def create
     @like = Like.new(likeable_id: params[:likeable_id], likeable_type: params[:likeable_type], liker_id: params[:liker_id])
-
+    @path = params[:path]
+    @likeable = @like.likeable
     if @like.save
-      redirect_to root_path
+      @post = params[:post]
+      redirect_to "#{@path}##{@likeable.class}-#{@likeable.id}"
     else
-      flash[:error] = "Your Like was not correctly processed."
-      redirect_to root_path
+      redirect_to "#{@path}##{@likeable.class}-#{@likeable.id}"
     end
   end
 
   def destroy
     @like = Like.find(params[:id])
+    @path = params[:path]
+    @likeable = @like.likeable
+
     @like.destroy
-    redirect_to root_path, status: :see_other
+    redirect_to "#{@path}##{@likeable.class}-#{@likeable.id}"
   end
 end
