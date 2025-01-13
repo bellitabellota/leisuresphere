@@ -22,6 +22,7 @@ class CommentsController < ApplicationController
   end
 
   def edit
+    @path = params[:path]
     @commentable = find_commentable
     @comment = Comment.find(params[:id])
   end
@@ -29,9 +30,14 @@ class CommentsController < ApplicationController
   def update
     @commentable = find_commentable
     @comment = Comment.find(params[:id])
+    @path = path_params
 
     if @comment.update(comment_params)
-      redirect_to root_path
+      if @path = profile_path(current_user.profile.id)
+        redirect_to profile_path(current_user.profile.id, anchor: "#{@commentable.class}-#{@commentable.id}")
+      elsif @path = root_path
+        redirect_to root_path(anchor: "#{@commentable.class}-#{@commentable.id}")
+      end
     else
       render :edit, status: :unprocessable_entity
     end

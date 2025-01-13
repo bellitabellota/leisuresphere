@@ -63,7 +63,7 @@
           
           <% if comment.commenter == current_user %>
             <div class="comment-actions">
-              <%= link_to "Edit", edit_post_comment_path(post, comment)%>
+              <%= link_to "Edit", edit_post_comment_path(post, comment, path: request.original_url)%>
               <%= button_to "Delete", post_comment_path(post, comment), method: :delete %>
             </div>
           <% end %>
