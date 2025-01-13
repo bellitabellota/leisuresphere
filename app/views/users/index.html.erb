@@ -1,13 +1,24 @@
-<h1>Follow</h1>
-<p>Follow other users to see their latest posts in your Feed.</p>
-
-<div class="users">
-  <% @users.each do |user| %>
-    <% unless @followees.include?(user) %>
+<main class="follow-page">
+  <h1>Follow</h1>
+  <p>Follow other users to see their latest posts in your Feed.</p>
+  
+  <div class="users">
+    <% @users.each do |user| %>
+      <% unless @followees.include?(user) %>
         <div class="user">
-        <%= user.name %>
-        <%= button_to "Follow", follows_path(followee_id: user.id, follower_id: current_user.id), method: :post %>
+          <div>
+            <% if user.profile.profile_picture.attached? %>
+              <%= image_tag url_for(post.author.profile.profile_picture.variant(resize_to_fit: [40, 40]).processed), class: "profile-picture", alt: "" %>
+            <% else %>
+              <%= image_tag user.profile.avatar_url, size: "40x40", class: "profile-picture", alt:"" %>
+            <% end %>
+          </div>
+        
+
+          <p class="username"><%= user.name %></p>
+          <%= button_to "Follow", follows_path(followee_id: user.id, follower_id: current_user.id), method: :post, class:"follow-button" %>
         </div>
         <% end %>
-  <% end %>
-</div>
+    <% end %>
+  </div>
+</main>
