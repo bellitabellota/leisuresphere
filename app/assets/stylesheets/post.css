@@ -30,12 +30,8 @@
 	width: 40px;
 	height: 40px;
 	object-fit: cover;
-}
-
-.profile-picture {
-	height: 30px;
-	width: 30px;
-	object-fit: cover;
+	flex-shrink: 0;
+	flex-grow: 0;
 }
 
 .post-author a {
@@ -144,6 +140,8 @@
 	height: 35px;
 	border-radius: 18px;
 	object-fit: cover;
+	flex-shrink: 0;
+	flex-grow: 0;
 }
 
 .comment-information {
