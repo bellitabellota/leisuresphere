@@ -79,8 +79,9 @@
 }
 
 .profile-feed > * {
-    min-width: 400px;
+	min-width: 400px;
 	max-width: 650px;
+	width: 72vw;
 }
 
 .profile-feed h2 {
