@@ -53,5 +53,7 @@ module Leisuresphere
     end
 
     config.action_mailer.preview_paths << "#{Rails.root}/lib/mailer_previews"
+
+    config.action_mailer.asset_host = "https://leisuresphere-19144872.koyeb.app"
   end
 end
