@@ -8,7 +8,10 @@ Rails.application.routes.draw do
   root "feed#show"
 
   resources :follows, only: [ :index, :create, :destroy ]
+
   resources :users, only: [ :index, :destroy ]
+  get "follow" => "users#index"
+
   resources :likes, only: [ :create, :destroy ]
 
   resources :profiles, only: [ :show, :edit, :update ] do
