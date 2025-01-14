@@ -13,7 +13,7 @@
       <img src="./assets/0.13.1/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2025-01-13T14:47:09+00:00">2025-01-13T14:47:09+00:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2025-01-14T10:02:29+00:00">2025-01-14T10:02:29+00:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -1846,7 +1846,7 @@
 
             
 
-            <code class="ruby">    @follows = Follow.where(follower_id: current_user.id)</code>
+            <code class="ruby">    @follows = Follow.includes({ followee: :profile }).where(follower_id: current_user.id)</code>
           </li>
         </div>
       
@@ -4330,7 +4330,7 @@
 
             
 
-            <code class="ruby">    @users = User.where.not(id: current_user.id)</code>
+            <code class="ruby">    @users = User.includes(:profile).where.not(id: current_user.id)</code>
           </li>
         </div>
       

@@ -31,7 +31,7 @@ class ImagePostsController < ApplicationController
 
   def destroy
     @image_post = ImagePost.find(params[:id])
-
+    @image_post.body.purge
     @image_post.destroy
     redirect_to profile_path(current_user.profile.id), status: :see_other
   end
