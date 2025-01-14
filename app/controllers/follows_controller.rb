@@ -1,6 +1,6 @@
 class FollowsController < ApplicationController
   def index
-    @follows = Follow.where(follower_id: current_user.id)
+    @follows = Follow.includes({ followee: :profile }).where(follower_id: current_user.id)
   end
 
   def create
