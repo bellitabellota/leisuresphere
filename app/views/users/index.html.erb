@@ -9,7 +9,7 @@
         <div class="user">
           <div>
             <% if user.profile.profile_picture.attached? %>
-              <%= image_tag url_for(post.author.profile.profile_picture.variant(resize_to_fit: [40, 40]).processed), class: "profile-picture", alt: "" %>
+              <%= image_tag url_for(user.profile.profile_picture.variant(resize_to_fit: [40, 40]).processed), class: "profile-picture", alt: "" %>
             <% else %>
               <%= image_tag user.profile.avatar_url, size: "40x40", class: "profile-picture", alt:"" %>
             <% end %>
