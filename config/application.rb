@@ -51,5 +51,7 @@ module Leisuresphere
         request_specs:    false,
         controller_specs: false
     end
+
+    config.action_mailer.preview_paths << "#{Rails.root}/lib/mailer_previews"
   end
 end
