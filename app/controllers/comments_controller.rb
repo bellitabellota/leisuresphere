@@ -34,10 +34,8 @@ class CommentsController < ApplicationController
 
     if @comment.update(comment_params)
       if @path == profile_url(current_user.profile.id)
-        p "if profile path"
         redirect_to profile_url(current_user.profile.id, anchor: "#{@commentable.class}-#{@commentable.id}")
       elsif @path == root_url
-        p "elsif root path"
         redirect_to root_path(anchor: "#{@commentable.class}-#{@commentable.id}")
       end
     else
