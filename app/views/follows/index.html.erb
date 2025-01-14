@@ -15,7 +15,7 @@
           <% end %>
         </div>
 
-        <div class="followeename"><%= follow.followee.name %></div>
+        <div class="followeename"><%= link_to "#{follow.followee.name}", profile_path(follow.followee.profile) %></div>
         <%= button_to "Unfollow", follow_path(follow), method: :delete, data: { turbo_confirm: "Are you sure?" }, class:"unfollow-button" %>
         
       </div>
