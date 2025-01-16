@@ -34,6 +34,10 @@ For deployment [Koyeb](https://www.koyeb.com/) was used and the PostgreSQL datab
   - This application has 98.63% test coverage. The tests were implemented using RSpec, Capybara and FactoryBots.
  
   (Please note: Although some CSS was added to create an appealing appearance, no effort was made towards a responsive design as the focus was on applying my Rails knowledge and learning new aspects about Rails.)
+
+## Models and Associations
+
+  ![the_models](https://github.com/user-attachments/assets/2b87d1cc-a276-4dfe-93da-cc69a5f585e8)
   
 ## Screenshots
 - Login:
@@ -60,12 +64,5 @@ For deployment [Koyeb](https://www.koyeb.com/) was used and the PostgreSQL datab
   ![profile_top](https://github.com/user-attachments/assets/97eebeb6-ffc3-44e9-9b95-d7a5371af018)
 
 - Live demo:
-  
-<video width="600" controls autoplay>
- <source src="https://github.com/user-attachments/assets/c35baed0-b623-40f0-8d2f-a43c6c74e1cd" type="video/mp4">
-</video>
 
-
-  ## Models and Associations
-
-  ![the_models](https://github.com/user-attachments/assets/2b87d1cc-a276-4dfe-93da-cc69a5f585e8)
+https://github.com/user-attachments/assets/c35baed0-b623-40f0-8d2f-a43c6c74e1cd
