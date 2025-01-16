@@ -4,6 +4,35 @@ This project is my realization of the [final project of TOP's Rails path](https:
 
 For deployment [Koyeb](https://www.koyeb.com/) was used and the PostgreSQL database is run via [Neon](https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqbDdMNk5EOWY2NDEtZ09sN21URDRGLTdXLTdQQXxBQ3Jtc0trdENiMnNYaWd4cXV2TzA1OHNIdlBpVGFCSjFfVDRueWNSQVJFeXUyUmhaM2RlWTdLbUF5Q0ctSmRpaE1XR3V3OTRHU0hGTkJ0aENWTDNSc3B1ZjJEcUpzT0o5NUpjNEFDa05EenZOXzIwMmVhLTJhTQ&q=https%3A%2F%2Fneon.tech%2F&v=X_R5kTjz-dE), so you can [try the app yourself](https://leisuresphere-19144872.koyeb.app/).
 
+## Features
+ - Log in / out
+   - Authentication with Devise Gem
+   - Authentication with Google Omniauth
+ - Home / Feed
+   - Users see their own posts and the posts of their followees
+   - Users can create text or image posts
+ - Profile
+   - After signing up an profile is created automatically with either the Google image, Gravatar image or default image
+   - The profile picture and other profile fields can be updated
+   - On the profile page in addition to managing their profile details users see all their post and they can update or delete them here.
+ - Follow page
+   - Users can follow others to see their posts on the Feed
+ - Following page
+   - Users see the other users they are following and can unfollow them
+ - Comment
+   - Users can comment on posts and update or delete them on the feed or on the profile page.
+     After completing one of those actions they are redirected back to the post on the Feed or the profile page (depending on where they took their action).
+- Likes
+  - Users can like/unlike post
+  - The total like count is displayed next to the like/unlike button
+  - After liking/unliking a post users are redirected back to the post on the Feed or the profile page (depending on where they took their action).
+- Miscellaneous
+  - After sign up users receive a Welcome email (as email provider [SendGrid](https://sendgrid.com/en-us) was used)
+  - Image upload is realized via Active storage using [Amazon S3](https://aws.amazon.com/s3) for cloud storage
+  - This application has 98.63% test coverage. The tests were implemented using RSpec, Capybara and FactoryBots.
+ 
+  (Please note: Although some CSS was added to create an appealing appearance, no effort was made towards a responsive design responsive as the focus was put on applying my Rails knowledge and learning new aspects about Rails.)
+  
 ## Screenshots
 - Login:
 
