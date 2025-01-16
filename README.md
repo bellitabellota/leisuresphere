@@ -9,29 +9,31 @@ For deployment [Koyeb](https://www.koyeb.com/) was used and the PostgreSQL datab
    - Authentication with Devise Gem
    - Authentication with Google Omniauth
  - Home / Feed
-   - Users see their own posts and the posts of their followees
-   - Users can create text or image posts
+   - Overview of the current user's posts and the posts of his/her followees
+   - Users can create text posts or image posts
  - Profile
-   - After signing up an profile is created automatically with either the Google image, Gravatar image or default image
+   - After signing up, a profile is created automatically with either the Google image, Gravatar image or default image
    - The profile picture and other profile fields can be updated
-   - On the profile page in addition to managing their profile details users see all their post and they can update or delete them here.
+   - On the profile page, in addition to managing their profile details, users see all their posts and they can update or delete them here.
  - Follow page
    - Users can follow others to see their posts on the Feed
  - Following page
    - Users see the other users they are following and can unfollow them
- - Comment
-   - Users can comment on posts and update or delete them on the feed or on the profile page.
-     After completing one of those actions they are redirected back to the post on the Feed or the profile page (depending on where they took their action).
-- Likes
-  - Users can like/unlike post
+ - Likes
+  - Posts can be liked/unliked
   - The total like count is displayed next to the like/unlike button
   - After liking/unliking a post users are redirected back to the post on the Feed or the profile page (depending on where they took their action).
+ - Comment
+   - Users can comment on posts and update or delete them on the feed or profile page.
+     After completing one of those actions they are redirected back to the post on the Feed or the profile page (depending on where they took their action).
+
 - Miscellaneous
-  - After sign up users receive a Welcome email (as email provider [SendGrid](https://sendgrid.com/en-us) was used)
-  - Image upload is realized via Active storage using [Amazon S3](https://aws.amazon.com/s3) for cloud storage
+  - After signing up users receive a Welcome email (as email provider [SendGrid](https://sendgrid.com/en-us) was used).
+  - Image upload is realized via Active storage using [Amazon S3](https://aws.amazon.com/s3) for cloud storage.
+  - Stimulus controller toggling the "post options" button on the profile page where users can update or delete their posts.
   - This application has 98.63% test coverage. The tests were implemented using RSpec, Capybara and FactoryBots.
  
-  (Please note: Although some CSS was added to create an appealing appearance, no effort was made towards a responsive design responsive as the focus was put on applying my Rails knowledge and learning new aspects about Rails.)
+  (Please note: Although some CSS was added to create an appealing appearance, no effort was made towards a responsive design as the focus was on applying my Rails knowledge and learning new aspects about Rails.)
   
 ## Screenshots
 - Login:
