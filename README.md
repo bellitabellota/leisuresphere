@@ -60,6 +60,11 @@ For deployment [Koyeb](https://www.koyeb.com/) was used and the PostgreSQL datab
   ![profile_top](https://github.com/user-attachments/assets/97eebeb6-ffc3-44e9-9b95-d7a5371af018)
 
 - Live demo:
+  
+<video width="600" controls autoplay>
+ <source src="https://github.com/user-attachments/assets/c35baed0-b623-40f0-8d2f-a43c6c74e1cd" type="video/mp4">
+</video>
+
 
   ## Models and Associations
 
