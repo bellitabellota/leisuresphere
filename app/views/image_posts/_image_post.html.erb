@@ -55,12 +55,14 @@
         <div class="comment-content">
           <div class="comment-information">
             <p class="commenter"><%= link_to "#{comment.commenter.name}", profile_path(comment.commenter.profile.id) %></p>
-            <p class="comment-body"><%= comment.body %></p>
+            <%= turbo_frame_tag "edit-comment-#{comment.id}" do %>
+              <p class="comment-body"><%= comment.body %></p>
+            <% end %>
           </div>
           
           <% if comment.commenter == current_user %>
             <div class="comment-actions">
-              <%= link_to "Edit", edit_image_post_comment_path(image_post, comment, path: request.original_url)%>
+              <%= link_to "Edit", edit_image_post_comment_path(image_post, comment, path: request.original_url), data: { turbo_frame: "edit-comment-#{comment.id}" } %>
               <%= button_to "Delete", image_post_comment_path(image_post, comment, path: request.original_url), method: :delete, data: { turbo: false } %>
             </div>
           <% end %>

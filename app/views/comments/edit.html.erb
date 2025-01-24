@@ -1,6 +1,9 @@
-<%= content_for(:title) { "LeisureSphere | Edit Comment" } %> 
+<%= content_for(:title) { "LeisureSphere | Edit Comment" } %>
+
 <main class="form">
 	<h1>Edit your Comment</h1>
 	
-	<%= render "comment_form", commentable: @commentable, comment: @comment %>
+	<%= turbo_frame_tag "edit-comment-#{@comment.id}" do %>
+		<%= render "comment_form", commentable: @commentable, comment: @comment %>
+	<% end %>
 </main>
