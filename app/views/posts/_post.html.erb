@@ -46,7 +46,7 @@
   <%= link_to "Add Comment", new_post_comment_path(post_id: post.id, path: request.original_url), class: "add-comment" %>
   
   <% if post.comments %>
-    <% post.comments.each do |comment| %>
+    <% post.comments.order(created_at: :asc).each do |comment| %>
       <div class="comment-container">
         <% if comment.commenter.profile.profile_picture.attached? %>
           <%= image_tag url_for(comment.commenter.profile.profile_picture.variant(resize_to_fit: [35, 35]).processed), class: "profile-picture", alt: "" %>
