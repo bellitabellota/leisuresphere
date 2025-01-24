@@ -7,8 +7,8 @@ class CommentsController < ApplicationController
 
   def create
     @commentable = find_commentable
-    @comment = @commentable.comments.build(comment_params)
-    @path = path_params[:path]
+    @comment = @commentable.comments.build(body: comment_params[:body], commenter_id: comment_params[:commenter_id])
+    @path = comment_params[:path]
 
     if @comment.save
       if @path == profile_url(current_user.profile.id)
@@ -30,13 +30,13 @@ class CommentsController < ApplicationController
   def update
     @commentable = find_commentable
     @comment = Comment.find(params[:id])
-    @path = path_params[:path]
+    @path = comment_params[:path]
 
-    if @comment.update(comment_params)
+    if @comment.update(body: comment_params[:body], commenter_id: comment_params[:commenter_id])
       if @path == profile_url(current_user.profile.id)
-        redirect_to profile_url(current_user.profile.id, anchor: "#{@commentable.class}-#{@commentable.id}")
+        redirect_to profile_url(current_user.profile.id)
       elsif @path == root_url
-        redirect_to root_path(anchor: "#{@commentable.class}-#{@commentable.id}")
+        redirect_to root_path
       end
     else
       render :edit, status: :unprocessable_entity
@@ -54,7 +54,7 @@ class CommentsController < ApplicationController
   private
 
   def comment_params
-    params.require(:comment).permit(:body, :commenter_id)
+    params.require(:comment).permit(:body, :commenter_id, :path)
   end
 
   def path_params
