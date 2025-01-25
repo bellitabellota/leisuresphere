@@ -65,4 +65,5 @@ For deployment [Koyeb](https://www.koyeb.com/) was used and the PostgreSQL datab
 
 - Live demo:
 
-https://github.com/user-attachments/assets/c35baed0-b623-40f0-8d2f-a43c6c74e1cd
+https://github.com/user-attachments/assets/c993a4d0-d374-431e-8f42-a4a717168d26 
+
