@@ -47,7 +47,7 @@
   
   <% if post.comments %>
     <% post.comments.order(created_at: :asc).each do |comment| %>
-      <div class="comment-container">
+      <div class="comment-container" id="post<%= post.id %>_comment<%= comment.id %>">
         <% if comment.commenter.profile.profile_picture.attached? %>
           <%= image_tag url_for(comment.commenter.profile.profile_picture.variant(resize_to_fit: [35, 35]).processed), class: "profile-picture", alt: "" %>
         <% else %>
@@ -66,7 +66,7 @@
           <% if comment.commenter == current_user %>
               <div class="comment-actions">
                 <%= link_to "Edit", edit_post_comment_path(post, comment, path: request.original_url), data: { turbo_frame: "edit-comment-#{comment.id}" } %>
-                <%= button_to "Delete", post_comment_path(post, comment, path: request.original_url), method: :delete, data: { turbo: false } %>
+                <%= button_to "Delete", post_comment_path(post, comment, path: request.original_url), method: :delete %>
               </div>
           <% end %>
         </div>

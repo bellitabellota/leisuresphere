@@ -48,7 +48,18 @@ class CommentsController < ApplicationController
     @comment.destroy
     @path = params[:path]
     @commentable = @comment.commentable
-    redirect_to "#{@path}##{@commentable.class}-#{@commentable.id}", status: :see_other
+
+    respond_to do |format|
+      if @comment.destroy
+        if @commentable.class == ImagePost
+          format.turbo_stream { render turbo_stream: turbo_stream.remove("image_post#{@commentable.id}_comment#{@comment.id}") }
+        elsif @commentable.class == Post
+          format.turbo_stream { render turbo_stream: turbo_stream.remove("post#{@commentable.id}_comment#{@comment.id}") }
+        end
+      else
+        redirect_to @path
+      end
+    end
   end
 
   private
