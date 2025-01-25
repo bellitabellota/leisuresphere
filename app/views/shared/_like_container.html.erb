@@ -1,0 +1,12 @@
+<div class="like-container">
+  <p><%= likeable.likers.size %> </p>
+  <% if likeable.likers.include?(current_user) %>
+    <%= button_to like_path(likeable.likes.find_by(liker_id: current_user.id), path: request.original_url), method: :delete do %>
+      <%= image_tag "icons/yellow-star.png", size: "14x14", alt: "star icon for post liked" %>
+    <% end %>
+  <% else %>
+    <%= button_to likes_path(likeable_id: likeable.id, likeable_type: likeable.class, liker_id: current_user.id, path: request.original_url), method: :post do %>
+      <%= image_tag "icons/transparent-star.png", size: "14x14", alt: "star icon to like post" %>
+    <% end %>
+  <% end %>
+</div>

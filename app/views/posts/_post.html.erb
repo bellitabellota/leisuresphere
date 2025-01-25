@@ -28,18 +28,9 @@
   
   <p class="post-body"><%= post.body %></p>
   
-  <div class="like-container">
-    <p><%= post.likers.size %> </p>
-    <% if post.likers.include?(current_user) %>
-      <%= button_to like_path(post.likes.find_by(liker_id: current_user.id), path: request.original_url), method: :delete, data: { turbo: false } do %>    
-        <%= image_tag "icons/yellow-star.png", size: "14x14", alt: "star icon for post liked" %>
-      <% end %>
-    <% else %>
-      <%= button_to likes_path(likeable_id: post.id, likeable_type: "Post", liker_id: current_user.id, path: request.original_url), method: :post, data: { turbo: false } do %>
-        <%= image_tag "icons/transparent-star.png", size: "14x14", alt: "star icon to like post" %>
-      <% end %>
-    <% end %>
-  </div>
+  <%= turbo_frame_tag "post_#{post.id}_like_container" do %>
+    <%= render partial: "shared/like_container", locals: { likeable: post } %>
+  <% end %>
 
   <hr>
   
