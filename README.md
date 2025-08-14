@@ -2,7 +2,10 @@
 
 This project is my realization of the [final project of TOP's Rails path](https://www.theodinproject.com/lessons/ruby-on-rails-rails-final-project).
 
-For deployment [Koyeb](https://www.koyeb.com/) was used and the PostgreSQL database is run via [Neon](https://neon.com/), so you can [try the app yourself](https://leisuresphere-19144872.koyeb.app/).
+For deployment [Koyeb](https://www.koyeb.com/) was used and the PostgreSQL database is run via [Neon](https://neon.com/).
+___
+<strong> Try the app yourself: [--> Visit deployed app](https://leisuresphere-19144872.koyeb.app/)</strong>
+___
 
 ## Features
  - Log in / out
