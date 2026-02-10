@@ -5,6 +5,19 @@ This project is my realization of the [final project of TOP's Rails path](https:
 For deployment [Koyeb](https://www.koyeb.com/) was used and the PostgreSQL database is run via [Neon](https://neon.com/).
 ___
 <strong> Try the app yourself: [--> Visit deployed app](https://leisuresphere-19144872.koyeb.app/)</strong>
+
+You can sign up/log in using the below credentials:
+
+```
+testuser@mail.com
+  
+password1!
+```
+
+Connect with me using this token:
+```
+  9b43a805c1d55d0a1a2e
+```
 ___
 
 ## Features
