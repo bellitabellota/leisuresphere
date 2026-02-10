@@ -9,14 +9,11 @@ ___
 You can sign up/log in using the below credentials:
 
 ```
+TestUser
+
 testuser@mail.com
   
 password1!
-```
-
-Connect with me using this token:
-```
-  9b43a805c1d55d0a1a2e
 ```
 ___
 
